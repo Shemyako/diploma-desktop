@@ -30,10 +30,11 @@ namespace pesopolis
             cours_list.GridLines = true;
             // Sort the items in the list in ascending order.
             cours_list.Sorting = SortOrder.Ascending;
-            cours_list.Columns.Add("№", cours_list.Width / 4, HorizontalAlignment.Left);
-            cours_list.Columns.Add("Название", cours_list.Width / 4, HorizontalAlignment.Left);
-            cours_list.Columns.Add("Длина", cours_list.Width / 4, HorizontalAlignment.Left);
-            cours_list.Columns.Add("Цена", cours_list.Width / 4, HorizontalAlignment.Left);
+            cours_list.Columns.Add("№", cours_list.Width / 5, HorizontalAlignment.Left);
+            cours_list.Columns.Add("Название", cours_list.Width / 5, HorizontalAlignment.Left);
+            cours_list.Columns.Add("Длина", cours_list.Width / 5, HorizontalAlignment.Left);
+            cours_list.Columns.Add("Цена", cours_list.Width / 5, HorizontalAlignment.Left);
+            cours_list.Columns.Add("Актуальность", cours_list.Width / 5, HorizontalAlignment.Left);
             get_courses();
         }
 
@@ -64,6 +65,7 @@ namespace pesopolis
                                 item1.SubItems.Add(sub_words[1]);
                                 item1.SubItems.Add(sub_words[2]);
                                 item1.SubItems.Add(sub_words[3]);
+                                item1.SubItems.Add(sub_words[4]);
                                 cours_list.Items.Add(item1);
                             }
                             else
@@ -84,13 +86,6 @@ namespace pesopolis
                 // Была ошибка
                 case "0":
                     MessageBox.Show(courses[1]);
-                    break;
-
-                case "-1":
-                    MessageBox.Show("Вам нужно пройти заново авторизацию");
-                    form.Show();
-                    this.FormClosing -= New_cours_FormClosing;
-                    this.Close();
                     break;
 
 
@@ -158,6 +153,20 @@ namespace pesopolis
         private void is_actual_box_CheckedChanged(object sender, EventArgs e)
         {
             show_courses();
+        }
+
+        private void cours_list_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
+            string[] to_send = new string[5];
+            for (int i = 0; i < 5; i++)
+            {
+                to_send[i] = cours_list.SelectedItems[0].SubItems[i].Text;
+            }
+            this.FormClosing -= New_cours_FormClosing;
+            Create_new_cours form1 = new Create_new_cours(form, to_send);
+            form1.Show();
+            this.Close();
         }
     }
 }

@@ -13,10 +13,20 @@ namespace pesopolis
     public partial class Create_new_cours : Form
     {
         private Auth_form form;
-        public Create_new_cours(Auth_form form1)
+        private string edit_id;
+        public Create_new_cours(Auth_form form1, string[] info = null)
         {
             form = form1;
             InitializeComponent();
+            if (info != null)
+            {
+                name_textbox.Text = info[1];
+                amount_textbox.Text = info[2];
+                price_textbox.Text = info[3];
+                if (info[4] == "False")
+                    is_actual.Checked = false;
+                edit_id = info[0];
+            }
         }
 
         private void save_bttn_Click(object sender, EventArgs e)
@@ -30,7 +40,8 @@ namespace pesopolis
                     return; //если хоть один символ не число, то выкидываешь "ложь"
                 }
             }
-
+            price_textbox.Text = price_textbox.Text.Replace(" ", "");
+            price_textbox.Text = price_textbox.Text.Replace(".", ",");
             // Проверка на дурака
             try
             {
@@ -42,9 +53,14 @@ namespace pesopolis
                 return; //если хоть один символ не число, то выкидываешь "ложь"
             }
 
+            price_textbox.Text = price_textbox.Text.Replace(",", ".");
             string address = form.route + "/new/cours?" + form.after_route;
 
-            address += "&name=" + name_textbox.Text + "&amount=" + amount_textbox.Text + "&price=" + price_textbox.Text;
+            address += "&name=" + name_textbox.Text + "&amount=" + amount_textbox.Text + "&price=" + price_textbox.Text + "&actual=" + is_actual.Checked.ToString();
+
+            if (edit_id != null)
+                address += "&id=" + edit_id;
+            
             MessageBox.Show(address);
 
             string line = form.send_request(address);

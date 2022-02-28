@@ -45,6 +45,7 @@ namespace pesopolis
             this.cours_list.Size = new System.Drawing.Size(710, 372);
             this.cours_list.TabIndex = 31;
             this.cours_list.UseCompatibleStateImageBehavior = false;
+            this.cours_list.DoubleClick += new System.EventHandler(this.cours_list_DoubleClick);
             // 
             // create_cours
             // 
