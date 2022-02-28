@@ -60,7 +60,10 @@ namespace pesopolis
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            New_cours new_from = new New_cours(form);
+            new_from.Show();
+            this.FormClosing -= Menu_form_FormClosing;
+            this.Close();
         }
     }
 }

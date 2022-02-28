@@ -33,7 +33,7 @@ namespace pesopolis
             this.is_actual = new System.Windows.Forms.CheckBox();
             this.save_bttn = new System.Windows.Forms.Button();
             this.price_textbox = new System.Windows.Forms.TextBox();
-            this.phone_textbox = new System.Windows.Forms.TextBox();
+            this.amount_textbox = new System.Windows.Forms.TextBox();
             this.name_textbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +69,7 @@ namespace pesopolis
             this.save_bttn.TabIndex = 33;
             this.save_bttn.Text = "Сохранить";
             this.save_bttn.UseVisualStyleBackColor = true;
+            this.save_bttn.Click += new System.EventHandler(this.save_bttn_Click);
             // 
             // price_textbox
             // 
@@ -79,14 +80,14 @@ namespace pesopolis
             this.price_textbox.TabIndex = 31;
             this.price_textbox.Text = "Цена";
             // 
-            // phone_textbox
+            // amount_textbox
             // 
-            this.phone_textbox.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phone_textbox.Location = new System.Drawing.Point(255, 219);
-            this.phone_textbox.Name = "phone_textbox";
-            this.phone_textbox.Size = new System.Drawing.Size(251, 22);
-            this.phone_textbox.TabIndex = 30;
-            this.phone_textbox.Text = "Кол-во занятий";
+            this.amount_textbox.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.amount_textbox.Location = new System.Drawing.Point(255, 219);
+            this.amount_textbox.Name = "amount_textbox";
+            this.amount_textbox.Size = new System.Drawing.Size(251, 22);
+            this.amount_textbox.TabIndex = 30;
+            this.amount_textbox.Text = "Кол-во занятий";
             // 
             // name_textbox
             // 
@@ -106,12 +107,13 @@ namespace pesopolis
             this.Controls.Add(this.is_actual);
             this.Controls.Add(this.save_bttn);
             this.Controls.Add(this.price_textbox);
-            this.Controls.Add(this.phone_textbox);
+            this.Controls.Add(this.amount_textbox);
             this.Controls.Add(this.name_textbox);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Create_new_cours";
             this.Text = "Создать новый курс";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Create_new_cours_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -124,7 +126,7 @@ namespace pesopolis
         private System.Windows.Forms.CheckBox is_actual;
         private System.Windows.Forms.Button save_bttn;
         private System.Windows.Forms.TextBox price_textbox;
-        private System.Windows.Forms.TextBox phone_textbox;
+        private System.Windows.Forms.TextBox amount_textbox;
         private System.Windows.Forms.TextBox name_textbox;
     }
 }

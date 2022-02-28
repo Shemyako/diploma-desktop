@@ -31,7 +31,7 @@ namespace pesopolis
         {
             this.cours_list = new System.Windows.Forms.ListView();
             this.create_cours = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.is_actual_box = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -55,18 +55,20 @@ namespace pesopolis
             this.create_cours.TabIndex = 32;
             this.create_cours.Text = "Создать новый курс";
             this.create_cours.UseVisualStyleBackColor = true;
+            this.create_cours.Click += new System.EventHandler(this.create_cours_Click);
             // 
-            // checkBox1
+            // is_actual_box
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(940, 93);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(138, 17);
-            this.checkBox1.TabIndex = 33;
-            this.checkBox1.Text = "Скрыть старые курсы";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.is_actual_box.AutoSize = true;
+            this.is_actual_box.Checked = true;
+            this.is_actual_box.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.is_actual_box.Location = new System.Drawing.Point(940, 93);
+            this.is_actual_box.Name = "is_actual_box";
+            this.is_actual_box.Size = new System.Drawing.Size(138, 17);
+            this.is_actual_box.TabIndex = 33;
+            this.is_actual_box.Text = "Скрыть старые курсы";
+            this.is_actual_box.UseVisualStyleBackColor = true;
+            this.is_actual_box.CheckedChanged += new System.EventHandler(this.is_actual_box_CheckedChanged);
             // 
             // label1
             // 
@@ -93,7 +95,7 @@ namespace pesopolis
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.is_actual_box);
             this.Controls.Add(this.create_cours);
             this.Controls.Add(this.cours_list);
             this.Controls.Add(this.logo);
@@ -112,7 +114,7 @@ namespace pesopolis
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.ListView cours_list;
         private System.Windows.Forms.Button create_cours;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox is_actual_box;
         private System.Windows.Forms.Label label1;
     }
 }
