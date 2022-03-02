@@ -82,6 +82,12 @@
     <Compile Include="auth.Designer.cs">
       <DependentUpon>auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lessons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lessons.Designer.cs">
+      <DependentUpon>Lessons.cs</DependentUpon>
+    </Compile>
     <Compile Include="main_menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="auth.resx">
       <DependentUpon>auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lessons.resx">
+      <DependentUpon>Lessons.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main_menu.resx">
       <DependentUpon>main_menu.cs</DependentUpon>

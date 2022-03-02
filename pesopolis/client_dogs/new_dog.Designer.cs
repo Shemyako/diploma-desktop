@@ -41,6 +41,7 @@ namespace pesopolis
             this.phone_textBox = new System.Windows.Forms.TextBox();
             this.find_user_bttn = new System.Windows.Forms.Button();
             this.change_mod_bttn = new System.Windows.Forms.Button();
+            this.is_actual_box = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,12 +163,25 @@ namespace pesopolis
             this.change_mod_bttn.UseVisualStyleBackColor = true;
             this.change_mod_bttn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // is_actual_box
+            // 
+            this.is_actual_box.AutoSize = true;
+            this.is_actual_box.Checked = true;
+            this.is_actual_box.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.is_actual_box.Location = new System.Drawing.Point(217, 74);
+            this.is_actual_box.Name = "is_actual_box";
+            this.is_actual_box.Size = new System.Drawing.Size(79, 17);
+            this.is_actual_box.TabIndex = 34;
+            this.is_actual_box.Text = "Обучается";
+            this.is_actual_box.UseVisualStyleBackColor = true;
+            // 
             // New_dog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.is_actual_box);
             this.Controls.Add(this.change_mod_bttn);
             this.Controls.Add(this.dogs_list);
             this.Controls.Add(this.label1);
@@ -204,5 +218,6 @@ namespace pesopolis
         private System.Windows.Forms.TextBox phone_textBox;
         private System.Windows.Forms.Button find_user_bttn;
         private System.Windows.Forms.Button change_mod_bttn;
+        private System.Windows.Forms.CheckBox is_actual_box;
     }
 }

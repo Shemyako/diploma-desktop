@@ -179,6 +179,8 @@ namespace pesopolis
                                 }
                                 name_textbox.Text = sub_words[3];
                                 breed_textbox.Text = sub_words[4];
+                                if (sub_words[5] == "False")
+                                    is_actual_box.Checked = false;
 
                                 break;
                         }
@@ -237,7 +239,7 @@ namespace pesopolis
             }
 
             address += "&usr_id=" + id + "&name=" + name_textbox.Text + "&breed=" + breed_textbox.Text +
-                "&staff_id=" + ids[0] + "&place=" + ids[1] + "&cours=" + ids[2];
+                "&staff_id=" + ids[0] + "&place=" + ids[1] + "&cours=" + ids[2] + "&actual=" + is_actual_box.Checked.ToString();
             
             if (dog_id != null)
             {
@@ -297,7 +299,7 @@ namespace pesopolis
                     return; //если хоть один символ не число, то выкидываешь "ложь"
                 }
             }
-            string address = form.route + "/find/client?" + form.after_route;
+            string address = form.route + "/get/client?" + form.after_route;
 
             address += "&phone=" + phone_textBox.Text;
             MessageBox.Show(address);
@@ -433,7 +435,7 @@ namespace pesopolis
 
         private void get_owners()
         {
-            string address = form.route + "/find/dog/client?" + form.after_route;
+            string address = form.route + "/get/dog/client?" + form.after_route;
 
             address += "&dog_id=" + dog_id;
             MessageBox.Show(address);

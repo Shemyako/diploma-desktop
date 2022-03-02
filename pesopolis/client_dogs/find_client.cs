@@ -49,7 +49,7 @@ namespace pesopolis
                     return; //если хоть один символ не число, то выкидываешь "ложь"
                 }
             }
-            string address = form.route + "/find/client?" + form.after_route;
+            string address = form.route + "/get/client?" + form.after_route;
 
             address += "&phone=" + phone_textBox.Text;
             MessageBox.Show(address);

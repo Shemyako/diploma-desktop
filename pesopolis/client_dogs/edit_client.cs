@@ -66,7 +66,7 @@ namespace pesopolis
         public void get_dogs_info()
         {
             // this.FormClosing += edit_client_FormClosing;
-            string address = form.route + "/find/client/dog?" + form.after_route;
+            string address = form.route + "/get/client/dog?" + form.after_route;
             address += "&id=" + id;
             MessageBox.Show(address);
 
