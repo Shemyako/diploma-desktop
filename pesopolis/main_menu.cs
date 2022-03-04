@@ -65,5 +65,13 @@ namespace pesopolis
             this.FormClosing -= Menu_form_FormClosing;
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Lessons new_form = new Lessons(form);
+            new_form.Show();
+            this.FormClosing -= Menu_form_FormClosing;
+            this.Close();
+        }
     }
 }

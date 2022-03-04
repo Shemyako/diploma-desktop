@@ -491,7 +491,7 @@ namespace pesopolis
                         if (flag)
                         {
                             string[] sub_words = item.Split(new char[] { '|' });
-                            if (sub_words.Length == 4)
+                            if (sub_words.Length == 5)
                             {
                                 // Create three items and three sets of subitems for each item.
                                 owner_ids.Add(sub_words[0]);
