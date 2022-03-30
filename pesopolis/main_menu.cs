@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pesopolis.places;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,6 +70,14 @@ namespace pesopolis
         private void button4_Click(object sender, EventArgs e)
         {
             Lessons new_form = new Lessons(form);
+            new_form.Show();
+            this.FormClosing -= Menu_form_FormClosing;
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Show_places new_form = new Show_places(form);
             new_form.Show();
             this.FormClosing -= Menu_form_FormClosing;
             this.Close();
