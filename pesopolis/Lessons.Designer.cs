@@ -71,7 +71,7 @@ namespace pesopolis
             this.date_picker.Name = "date_picker";
             this.date_picker.Size = new System.Drawing.Size(92, 20);
             this.date_picker.TabIndex = 33;
-            this.date_picker.ValueChanged += new System.EventHandler(this.staff_comboBox_SelectedIndexChanged);
+            this.date_picker.KeyDown += new System.Windows.Forms.KeyEventHandler(this.date_picker_KeyDown);
             // 
             // staff_comboBox
             // 
