@@ -242,5 +242,10 @@ namespace pesopolis
             this.FormClosing -= edit_client_FormClosing;
             this.Close();
         }
+
+        private void Edit_client_Load(object sender, EventArgs e)
+        {
+            form.Show_menu(panel1);
+        }
     }
 }

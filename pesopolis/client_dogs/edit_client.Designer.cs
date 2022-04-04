@@ -30,7 +30,6 @@ namespace pesopolis
         private void InitializeComponent()
         {
             this.logo = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.save_bttn = new System.Windows.Forms.Button();
             this.email_textbox = new System.Windows.Forms.TextBox();
             this.tg_id_textbox = new System.Windows.Forms.TextBox();
@@ -41,6 +40,7 @@ namespace pesopolis
             this.add_dog_bttn = new System.Windows.Forms.Button();
             this.birth_picker = new System.Windows.Forms.DateTimePicker();
             this.is_handler = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,15 +52,6 @@ namespace pesopolis
             this.logo.Size = new System.Drawing.Size(149, 153);
             this.logo.TabIndex = 2;
             this.logo.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 170);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Menu";
             // 
             // save_bttn
             // 
@@ -161,12 +152,20 @@ namespace pesopolis
             this.is_handler.Text = "Кинолог";
             this.is_handler.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 496);
+            this.panel1.TabIndex = 35;
+            // 
             // Edit_client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_handler);
             this.Controls.Add(this.birth_picker);
             this.Controls.Add(this.add_dog_bttn);
@@ -177,12 +176,12 @@ namespace pesopolis
             this.Controls.Add(this.tg_id_textbox);
             this.Controls.Add(this.phone_textbox);
             this.Controls.Add(this.name_textbox);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Edit_client";
             this.Text = "Редактировать клиента";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.edit_client_FormClosing);
+            this.Load += new System.EventHandler(this.Edit_client_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -192,7 +191,6 @@ namespace pesopolis
         #endregion
 
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button save_bttn;
         private System.Windows.Forms.TextBox email_textbox;
         private System.Windows.Forms.TextBox tg_id_textbox;
@@ -203,5 +201,6 @@ namespace pesopolis
         private System.Windows.Forms.Button add_dog_bttn;
         private System.Windows.Forms.DateTimePicker birth_picker;
         private System.Windows.Forms.CheckBox is_handler;
+        private System.Windows.Forms.Panel panel1;
     }
 }

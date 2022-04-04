@@ -110,6 +110,7 @@ namespace pesopolis
             // 
             // auth_bttn
             // 
+            this.auth_bttn.BackColor = System.Drawing.Color.White;
             this.auth_bttn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.auth_bttn.Font = new System.Drawing.Font("Georgia", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.auth_bttn.Location = new System.Drawing.Point(374, 519);
@@ -117,7 +118,7 @@ namespace pesopolis
             this.auth_bttn.Size = new System.Drawing.Size(532, 100);
             this.auth_bttn.TabIndex = 6;
             this.auth_bttn.Text = "Подтвердить";
-            this.auth_bttn.UseVisualStyleBackColor = true;
+            this.auth_bttn.UseVisualStyleBackColor = false;
             this.auth_bttn.Click += new System.EventHandler(this.auth_bttn_Click);
             // 
             // notifyIcon1

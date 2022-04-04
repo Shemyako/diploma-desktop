@@ -1,4 +1,5 @@
-﻿using System;
+﻿using pesopolis.places;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -180,9 +181,71 @@ namespace pesopolis
             return line;
         }
 
-        public void Show_menu(Panel panel, int role)
+        public void Show_menu(Panel panel)
         {
+            int location_h = 0;
+            Button[] btns = new Button[5];
+            for (int i = 0; i < btns.Length; i++)
+            {
+                btns[i] = new Button();
+                btns[i].BackColor = System.Drawing.Color.White;
+                btns[i].FlatStyle = System.Windows.Forms.FlatStyle.System;
+                btns[i].Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+                btns[i].UseVisualStyleBackColor = false;
+                btns[i].Width = 143;
+                btns[i].Height = 23;
+                btns[i].Location = new Point(3, location_h);
+                panel.Controls.Add(btns[i]);
+                location_h += 29;
+            }
 
+            
+            
+            btns[0].Text = "Создать клиента";
+            btns[0].Click += (sender, args) =>
+            {
+                New_client new_from = new New_client(this);
+                new_from.Show();
+                Application.OpenForms[1].Close();
+                active_forms = 1;
+            };
+
+
+            btns[1].Text = "Найти клиента";
+            btns[1].Click += (sender, args) =>
+            {
+                Find_client new_from = new Find_client(this);
+                new_from.Show();
+                Application.OpenForms[1].Close();
+                active_forms = 1;
+            };
+
+            btns[2].Text = "Занятия";
+            btns[2].Click += (sender, args) =>
+            {
+                Lessons new_from = new Lessons(this);
+                new_from.Show();
+                Application.OpenForms[1].Close();
+                active_forms = 1;
+            };
+
+            btns[3].Text = "Курсы";
+            btns[3].Click += (sender, args) =>
+            {
+                New_cours new_from = new New_cours(this);
+                new_from.Show();
+                Application.OpenForms[1].Close();
+                active_forms = 1;
+            };
+
+            btns[4].Text = "Площадки";
+            btns[4].Click += (sender, args) =>
+            {
+                Show_places new_from = new Show_places(this);
+                new_from.Show();
+                Application.OpenForms[1].Close();
+                active_forms = 1;
+            };
         }
 
     }

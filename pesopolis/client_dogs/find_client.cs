@@ -143,5 +143,10 @@ namespace pesopolis
 
 
         }
+
+        private void Find_client_Load(object sender, EventArgs e)
+        {
+            form.Show_menu(panel1);
+        }
     }
 }

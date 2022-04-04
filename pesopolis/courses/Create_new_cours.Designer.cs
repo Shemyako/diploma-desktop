@@ -35,6 +35,7 @@ namespace pesopolis
             this.price_textbox = new System.Windows.Forms.TextBox();
             this.amount_textbox = new System.Windows.Forms.TextBox();
             this.name_textbox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,12 +99,20 @@ namespace pesopolis
             this.name_textbox.TabIndex = 29;
             this.name_textbox.Text = "Имя";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 496);
+            this.panel1.TabIndex = 36;
+            // 
             // Create_new_cours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_actual);
             this.Controls.Add(this.save_bttn);
             this.Controls.Add(this.price_textbox);
@@ -114,6 +123,7 @@ namespace pesopolis
             this.Name = "Create_new_cours";
             this.Text = "Создать новый курс";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Create_new_cours_FormClosing);
+            this.Load += new System.EventHandler(this.Create_new_cours_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,5 +138,6 @@ namespace pesopolis
         private System.Windows.Forms.TextBox price_textbox;
         private System.Windows.Forms.TextBox amount_textbox;
         private System.Windows.Forms.TextBox name_textbox;
+        private System.Windows.Forms.Panel panel1;
     }
 }

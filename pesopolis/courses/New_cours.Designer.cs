@@ -32,8 +32,8 @@ namespace pesopolis
             this.cours_list = new System.Windows.Forms.ListView();
             this.create_cours = new System.Windows.Forms.Button();
             this.is_actual_box = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,15 +71,6 @@ namespace pesopolis
             this.is_actual_box.UseVisualStyleBackColor = true;
             this.is_actual_box.CheckedChanged += new System.EventHandler(this.is_actual_box_CheckedChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 186);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "menu";
-            // 
             // logo
             // 
             this.logo.Image = global::pesopolis.Properties.Resources.logo;
@@ -89,13 +80,20 @@ namespace pesopolis
             this.logo.TabIndex = 4;
             this.logo.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 496);
+            this.panel1.TabIndex = 34;
+            // 
             // New_cours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_actual_box);
             this.Controls.Add(this.create_cours);
             this.Controls.Add(this.cours_list);
@@ -104,6 +102,7 @@ namespace pesopolis
             this.Name = "New_cours";
             this.Text = "Редактор курсов";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.New_cours_FormClosing);
+            this.Load += new System.EventHandler(this.New_cours_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,6 +115,6 @@ namespace pesopolis
         private System.Windows.Forms.ListView cours_list;
         private System.Windows.Forms.Button create_cours;
         private System.Windows.Forms.CheckBox is_actual_box;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

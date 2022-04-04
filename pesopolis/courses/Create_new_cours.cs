@@ -108,5 +108,10 @@ namespace pesopolis
         {
             form.active_forms = 0;
         }
+
+        private void Create_new_cours_Load(object sender, EventArgs e)
+        {
+            form.Show_menu(panel1);
+        }
     }
 }

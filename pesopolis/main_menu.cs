@@ -51,7 +51,7 @@ namespace pesopolis
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void find_client_bttn_click(object sender, EventArgs e)
         {
             Find_client new_from = new Find_client(form);
             new_from.Show();
@@ -59,7 +59,7 @@ namespace pesopolis
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void cours_bttn_Click(object sender, EventArgs e)
         {
             New_cours new_from = new New_cours(form);
             new_from.Show();
@@ -67,7 +67,7 @@ namespace pesopolis
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void lesson_bttn_Click(object sender, EventArgs e)
         {
             Lessons new_form = new Lessons(form);
             new_form.Show();
@@ -75,12 +75,18 @@ namespace pesopolis
             this.Close();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void places_bttn_Click(object sender, EventArgs e)
         {
             Show_places new_form = new Show_places(form);
             new_form.Show();
             this.FormClosing -= Menu_form_FormClosing;
             this.Close();
+        }
+
+        private void Menu_form_Load(object sender, EventArgs e)
+        {
+
+            form.Show_menu(panel1);
         }
     }
 }

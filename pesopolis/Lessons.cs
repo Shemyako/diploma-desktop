@@ -373,5 +373,10 @@ namespace pesopolis
             if (e.KeyCode == Keys.Enter)
                 staff_comboBox_SelectedIndexChanged(sender, e);
         }
+
+        private void Lessons_Load(object sender, EventArgs e)
+        {
+            form.Show_menu(panel1);
+        }
     }
 }

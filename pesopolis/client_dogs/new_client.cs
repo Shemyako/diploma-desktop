@@ -97,5 +97,10 @@ namespace pesopolis
             
             
         }
+
+        private void New_client_Load(object sender, EventArgs e)
+        {
+            form.Show_menu(panel1);
+        }
     }
 }

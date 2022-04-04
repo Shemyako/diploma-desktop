@@ -164,5 +164,10 @@ namespace pesopolis.places
         {
             form.active_forms = 0;
         }
+
+        private void Show_places_Load(object sender, EventArgs e)
+        {
+            form.Show_menu(panel1);
+        }
     }
 }

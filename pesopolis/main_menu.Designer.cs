@@ -33,10 +33,10 @@ namespace pesopolis
             this.panel1 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.places_bttn = new System.Windows.Forms.Button();
+            this.lesson_bttn = new System.Windows.Forms.Button();
+            this.cours_bttn = new System.Windows.Forms.Button();
+            this.find_client_bttn = new System.Windows.Forms.Button();
             this.new_client_bttn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel1.SuspendLayout();
@@ -55,10 +55,10 @@ namespace pesopolis
             // 
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.places_bttn);
+            this.panel1.Controls.Add(this.lesson_bttn);
+            this.panel1.Controls.Add(this.cours_bttn);
+            this.panel1.Controls.Add(this.find_client_bttn);
             this.panel1.Controls.Add(this.new_client_bttn);
             this.panel1.Location = new System.Drawing.Point(13, 173);
             this.panel1.Name = "panel1";
@@ -73,6 +73,7 @@ namespace pesopolis
             this.button7.TabIndex = 9;
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
             // 
             // button6
             // 
@@ -82,46 +83,50 @@ namespace pesopolis
             this.button6.TabIndex = 8;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button6.Visible = false;
             // 
-            // button5
+            // places_bttn
             // 
-            this.button5.Location = new System.Drawing.Point(3, 119);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(143, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
+            this.places_bttn.Location = new System.Drawing.Point(3, 119);
+            this.places_bttn.Name = "places_bttn";
+            this.places_bttn.Size = new System.Drawing.Size(143, 23);
+            this.places_bttn.TabIndex = 7;
+            this.places_bttn.Text = "Площадки";
+            this.places_bttn.UseVisualStyleBackColor = true;
+            this.places_bttn.Visible = false;
+            this.places_bttn.Click += new System.EventHandler(this.places_bttn_Click);
             // 
-            // button4
+            // lesson_bttn
             // 
-            this.button4.Location = new System.Drawing.Point(3, 90);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(143, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.lesson_bttn.Location = new System.Drawing.Point(3, 90);
+            this.lesson_bttn.Name = "lesson_bttn";
+            this.lesson_bttn.Size = new System.Drawing.Size(143, 23);
+            this.lesson_bttn.TabIndex = 6;
+            this.lesson_bttn.Text = "Занятия";
+            this.lesson_bttn.UseVisualStyleBackColor = true;
+            this.lesson_bttn.Visible = false;
+            this.lesson_bttn.Click += new System.EventHandler(this.lesson_bttn_Click);
             // 
-            // button3
+            // cours_bttn
             // 
-            this.button3.Location = new System.Drawing.Point(3, 61);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.cours_bttn.Location = new System.Drawing.Point(3, 61);
+            this.cours_bttn.Name = "cours_bttn";
+            this.cours_bttn.Size = new System.Drawing.Size(143, 23);
+            this.cours_bttn.TabIndex = 5;
+            this.cours_bttn.Text = "Окно курсов";
+            this.cours_bttn.UseVisualStyleBackColor = true;
+            this.cours_bttn.Click += new System.EventHandler(this.cours_bttn_Click);
             // 
-            // button2
+            // find_client_bttn
             // 
-            this.button2.Location = new System.Drawing.Point(3, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.find_client_bttn.Location = new System.Drawing.Point(3, 32);
+            this.find_client_bttn.Name = "find_client_bttn";
+            this.find_client_bttn.Size = new System.Drawing.Size(143, 23);
+            this.find_client_bttn.TabIndex = 4;
+            this.find_client_bttn.Text = "Найти клиента";
+            this.find_client_bttn.UseVisualStyleBackColor = true;
+            this.find_client_bttn.Visible = false;
+            this.find_client_bttn.Click += new System.EventHandler(this.find_client_bttn_click);
             // 
             // new_client_bttn
             // 
@@ -131,6 +136,7 @@ namespace pesopolis
             this.new_client_bttn.TabIndex = 3;
             this.new_client_bttn.Text = "Новый клинт";
             this.new_client_bttn.UseVisualStyleBackColor = true;
+            this.new_client_bttn.Visible = false;
             this.new_client_bttn.Click += new System.EventHandler(this.New_client_bttn_Click);
             // 
             // Menu_form
@@ -146,6 +152,7 @@ namespace pesopolis
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_form_FormClosing);
+            this.Load += new System.EventHandler(this.Menu_form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -159,9 +166,9 @@ namespace pesopolis
         private System.Windows.Forms.Button new_client_bttn;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button places_bttn;
+        private System.Windows.Forms.Button lesson_bttn;
+        private System.Windows.Forms.Button cours_bttn;
+        private System.Windows.Forms.Button find_client_bttn;
     }
 }

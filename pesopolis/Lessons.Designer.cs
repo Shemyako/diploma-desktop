@@ -41,6 +41,7 @@ namespace pesopolis
             this.save_bttn = new System.Windows.Forms.Button();
             this.cancel_bttn = new System.Windows.Forms.Button();
             this.type_of_lesson_combobox = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,12 +170,20 @@ namespace pesopolis
             this.type_of_lesson_combobox.Size = new System.Drawing.Size(197, 24);
             this.type_of_lesson_combobox.TabIndex = 34;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 496);
+            this.panel1.TabIndex = 38;
+            // 
             // Lessons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cancel_bttn);
             this.Controls.Add(this.save_bttn);
             this.Controls.Add(this.add_to_list_bttn);
@@ -189,8 +198,9 @@ namespace pesopolis
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Lessons";
-            this.Text = "Lessons";
+            this.Text = "Занятия";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Lessons_FormClosing);
+            this.Load += new System.EventHandler(this.Lessons_Load);
             this.Shown += new System.EventHandler(this.Lessons_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
@@ -212,5 +222,6 @@ namespace pesopolis
         private System.Windows.Forms.Button save_bttn;
         private System.Windows.Forms.Button cancel_bttn;
         private System.Windows.Forms.ComboBox type_of_lesson_combobox;
+        private System.Windows.Forms.Panel panel1;
     }
 }

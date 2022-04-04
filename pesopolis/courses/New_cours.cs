@@ -168,5 +168,10 @@ namespace pesopolis
             form1.Show();
             this.Close();
         }
+
+        private void New_cours_Load(object sender, EventArgs e)
+        {
+            form.Show_menu(panel1);
+        }
     }
 }

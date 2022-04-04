@@ -35,13 +35,13 @@ namespace pesopolis
             this.staff_comboBox = new System.Windows.Forms.ComboBox();
             this.place_comboBox = new System.Windows.Forms.ComboBox();
             this.cours_comboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.dogs_list = new System.Windows.Forms.ListView();
             this.phone_textBox = new System.Windows.Forms.TextBox();
             this.find_user_bttn = new System.Windows.Forms.Button();
             this.change_mod_bttn = new System.Windows.Forms.Button();
             this.is_actual_box = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,15 +100,6 @@ namespace pesopolis
             this.cours_comboBox.Name = "cours_comboBox";
             this.cours_comboBox.Size = new System.Drawing.Size(251, 24);
             this.cours_comboBox.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Menu";
             // 
             // logo
             // 
@@ -175,16 +166,23 @@ namespace pesopolis
             this.is_actual_box.Text = "Обучается";
             this.is_actual_box.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 496);
+            this.panel1.TabIndex = 35;
+            // 
             // New_dog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_actual_box);
             this.Controls.Add(this.change_mod_bttn);
             this.Controls.Add(this.dogs_list);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cours_comboBox);
             this.Controls.Add(this.place_comboBox);
             this.Controls.Add(this.staff_comboBox);
@@ -198,6 +196,7 @@ namespace pesopolis
             this.Name = "New_dog";
             this.Text = "Редактор собак";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.New_dog_FormClosing);
+            this.Load += new System.EventHandler(this.New_dog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -213,11 +212,11 @@ namespace pesopolis
         private System.Windows.Forms.ComboBox staff_comboBox;
         private System.Windows.Forms.ComboBox place_comboBox;
         private System.Windows.Forms.ComboBox cours_comboBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView dogs_list;
         private System.Windows.Forms.TextBox phone_textBox;
         private System.Windows.Forms.Button find_user_bttn;
         private System.Windows.Forms.Button change_mod_bttn;
         private System.Windows.Forms.CheckBox is_actual_box;
+        private System.Windows.Forms.Panel panel1;
     }
 }

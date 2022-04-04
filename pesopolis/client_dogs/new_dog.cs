@@ -762,5 +762,10 @@ namespace pesopolis
             }
             
         }
+
+        private void New_dog_Load(object sender, EventArgs e)
+        {
+            form.Show_menu(panel1);
+        }
     }
 }

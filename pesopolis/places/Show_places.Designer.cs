@@ -33,6 +33,7 @@ namespace pesopolis.places
             this.is_actual_box = new System.Windows.Forms.CheckBox();
             this.create_cours = new System.Windows.Forms.Button();
             this.cours_list = new System.Windows.Forms.ListView();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,12 +80,20 @@ namespace pesopolis.places
             this.cours_list.UseCompatibleStateImageBehavior = false;
             this.cours_list.DoubleClick += new System.EventHandler(this.cours_list_DoubleClick);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 496);
+            this.panel1.TabIndex = 37;
+            // 
             // Show_places
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_actual_box);
             this.Controls.Add(this.create_cours);
             this.Controls.Add(this.cours_list);
@@ -93,6 +102,7 @@ namespace pesopolis.places
             this.Name = "Show_places";
             this.Text = "Все площадки";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Show_places_FormClosing);
+            this.Load += new System.EventHandler(this.Show_places_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -105,5 +115,6 @@ namespace pesopolis.places
         private System.Windows.Forms.CheckBox is_actual_box;
         private System.Windows.Forms.Button create_cours;
         private System.Windows.Forms.ListView cours_list;
+        private System.Windows.Forms.Panel panel1;
     }
 }

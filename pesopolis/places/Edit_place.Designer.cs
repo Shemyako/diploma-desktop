@@ -34,6 +34,7 @@ namespace pesopolis.places
             this.save_bttn = new System.Windows.Forms.Button();
             this.name_textbox = new System.Windows.Forms.TextBox();
             this.address_textbox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,12 +89,20 @@ namespace pesopolis.places
             this.address_textbox.TabIndex = 36;
             this.address_textbox.Text = "Адрес";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 173);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 496);
+            this.panel1.TabIndex = 41;
+            // 
             // Edit_place
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_actual);
             this.Controls.Add(this.save_bttn);
             this.Controls.Add(this.name_textbox);
@@ -103,6 +112,7 @@ namespace pesopolis.places
             this.Name = "Edit_place";
             this.Text = "Изменить площадку";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Edit_place_FormClosing);
+            this.Load += new System.EventHandler(this.Edit_place_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,5 +126,6 @@ namespace pesopolis.places
         private System.Windows.Forms.Button save_bttn;
         private System.Windows.Forms.TextBox name_textbox;
         private System.Windows.Forms.TextBox address_textbox;
+        private System.Windows.Forms.Panel panel1;
     }
 }
