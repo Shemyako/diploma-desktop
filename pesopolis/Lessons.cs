@@ -138,6 +138,7 @@ namespace pesopolis
                 item1.SubItems.Add(sub_words[3]);
                 item1.SubItems.Add(sub_words[4]);
                 item1.SubItems.Add(sub_words[5]);
+                // Узнаём количество занятий для каждой собаки из имеющихся записей (query)
                 for (int i = 0; i < (dogs.Length - 1); i += 8)
                 {
 
@@ -182,6 +183,7 @@ namespace pesopolis
             {
                 // Всё норм
                 case "1":
+                    // Удаляем статус операции
                     lessons.RemoveAt(0);
                     // Копируем в список занятия. Этот список позже будет редактирвовать
                     
@@ -199,7 +201,7 @@ namespace pesopolis
                     // Обновление токена
                     form.Change_token(words[1]);
                     // Повторная отправка сообщения
-                    get_pre_lesson();
+                    staff_comboBox_SelectedIndexChanged(sender, e);
                     break;
 
                 case "-1":

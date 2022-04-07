@@ -184,7 +184,7 @@ namespace pesopolis
         public void Show_menu(Panel panel)
         {
             int location_h = 0;
-            Button[] btns = new Button[5];
+            Button[] btns = new Button[6];
             for (int i = 0; i < btns.Length; i++)
             {
                 btns[i] = new Button();
@@ -242,6 +242,15 @@ namespace pesopolis
             btns[4].Click += (sender, args) =>
             {
                 Show_places new_from = new Show_places(this);
+                new_from.Show();
+                Application.OpenForms[1].Close();
+                active_forms = 1;
+            };
+
+            btns[5].Text = "ЗП";
+            btns[5].Click += (sender, args) =>
+            {
+                Salary new_from = new Salary(this);
                 new_from.Show();
                 Application.OpenForms[1].Close();
                 active_forms = 1;

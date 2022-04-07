@@ -45,9 +45,10 @@ namespace pesopolis
             // logo
             // 
             this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Location = new System.Drawing.Point(17, 17);
+            this.logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.Size = new System.Drawing.Size(199, 188);
             this.logo.TabIndex = 1;
             this.logo.TabStop = false;
             // 
@@ -60,16 +61,18 @@ namespace pesopolis
             this.panel1.Controls.Add(this.cours_bttn);
             this.panel1.Controls.Add(this.find_client_bttn);
             this.panel1.Controls.Add(this.new_client_bttn);
-            this.panel1.Location = new System.Drawing.Point(13, 173);
+            this.panel1.Location = new System.Drawing.Point(17, 213);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(149, 496);
+            this.panel1.Size = new System.Drawing.Size(199, 610);
             this.panel1.TabIndex = 2;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(3, 177);
+            this.button7.Location = new System.Drawing.Point(4, 218);
+            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(143, 23);
+            this.button7.Size = new System.Drawing.Size(191, 28);
             this.button7.TabIndex = 9;
             this.button7.Text = "button7";
             this.button7.UseVisualStyleBackColor = true;
@@ -77,9 +80,10 @@ namespace pesopolis
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(3, 148);
+            this.button6.Location = new System.Drawing.Point(4, 182);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(143, 23);
+            this.button6.Size = new System.Drawing.Size(191, 28);
             this.button6.TabIndex = 8;
             this.button6.Text = "button6";
             this.button6.UseVisualStyleBackColor = true;
@@ -87,9 +91,10 @@ namespace pesopolis
             // 
             // places_bttn
             // 
-            this.places_bttn.Location = new System.Drawing.Point(3, 119);
+            this.places_bttn.Location = new System.Drawing.Point(4, 146);
+            this.places_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.places_bttn.Name = "places_bttn";
-            this.places_bttn.Size = new System.Drawing.Size(143, 23);
+            this.places_bttn.Size = new System.Drawing.Size(191, 28);
             this.places_bttn.TabIndex = 7;
             this.places_bttn.Text = "Площадки";
             this.places_bttn.UseVisualStyleBackColor = true;
@@ -98,9 +103,10 @@ namespace pesopolis
             // 
             // lesson_bttn
             // 
-            this.lesson_bttn.Location = new System.Drawing.Point(3, 90);
+            this.lesson_bttn.Location = new System.Drawing.Point(4, 111);
+            this.lesson_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lesson_bttn.Name = "lesson_bttn";
-            this.lesson_bttn.Size = new System.Drawing.Size(143, 23);
+            this.lesson_bttn.Size = new System.Drawing.Size(191, 28);
             this.lesson_bttn.TabIndex = 6;
             this.lesson_bttn.Text = "Занятия";
             this.lesson_bttn.UseVisualStyleBackColor = true;
@@ -109,19 +115,22 @@ namespace pesopolis
             // 
             // cours_bttn
             // 
-            this.cours_bttn.Location = new System.Drawing.Point(3, 61);
+            this.cours_bttn.Location = new System.Drawing.Point(4, 75);
+            this.cours_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cours_bttn.Name = "cours_bttn";
-            this.cours_bttn.Size = new System.Drawing.Size(143, 23);
+            this.cours_bttn.Size = new System.Drawing.Size(191, 28);
             this.cours_bttn.TabIndex = 5;
             this.cours_bttn.Text = "Окно курсов";
             this.cours_bttn.UseVisualStyleBackColor = true;
+            this.cours_bttn.Visible = false;
             this.cours_bttn.Click += new System.EventHandler(this.cours_bttn_Click);
             // 
             // find_client_bttn
             // 
-            this.find_client_bttn.Location = new System.Drawing.Point(3, 32);
+            this.find_client_bttn.Location = new System.Drawing.Point(4, 39);
+            this.find_client_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.find_client_bttn.Name = "find_client_bttn";
-            this.find_client_bttn.Size = new System.Drawing.Size(143, 23);
+            this.find_client_bttn.Size = new System.Drawing.Size(191, 28);
             this.find_client_bttn.TabIndex = 4;
             this.find_client_bttn.Text = "Найти клиента";
             this.find_client_bttn.UseVisualStyleBackColor = true;
@@ -130,9 +139,10 @@ namespace pesopolis
             // 
             // new_client_bttn
             // 
-            this.new_client_bttn.Location = new System.Drawing.Point(3, 3);
+            this.new_client_bttn.Location = new System.Drawing.Point(4, 4);
+            this.new_client_bttn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.new_client_bttn.Name = "new_client_bttn";
-            this.new_client_bttn.Size = new System.Drawing.Size(143, 23);
+            this.new_client_bttn.Size = new System.Drawing.Size(191, 28);
             this.new_client_bttn.TabIndex = 3;
             this.new_client_bttn.Text = "Новый клинт";
             this.new_client_bttn.UseVisualStyleBackColor = true;
@@ -141,13 +151,14 @@ namespace pesopolis
             // 
             // Menu_form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Menu_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Меню";
