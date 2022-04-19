@@ -12,6 +12,13 @@ namespace pesopolis
             form = form1;
             form.active_forms = 1;
             InitializeComponent();
+            if (form.role == "3")
+            {
+                is_admin.Visible = true;
+                is_admin.Enabled = true;
+                password.Visible = true;
+            }
+                
         }
 
         private void New_client_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,6 +59,8 @@ namespace pesopolis
             // Кинолог ли
             if (is_handler.Checked)
                 role = "1";
+            else if (is_admin.Checked && form.role == "3")
+                role = "2";
 
             // Запрос на проверку логина и пароля
             // route - ip на который дклвть запрос
@@ -62,6 +71,8 @@ namespace pesopolis
             address += "&name=" + name_textbox.Text + "&phone=" + phone_textbox.Text + "&birth=" + birth + 
                 "&tg_id=" + tg_id_textbox.Text + "&email=" + email_textbox.Text + "&role=" + role;
             // MessageBox.Show(address);
+            if (role == "2")
+                address += "&password=" + password.Text;
 
             // Отправка запроса
             string line = form.send_request(address);
@@ -101,6 +112,14 @@ namespace pesopolis
         private void New_client_Load(object sender, EventArgs e)
         {
             form.Show_menu(panel1);
+        }
+
+        private void is_admin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (is_admin.Checked)
+                password.Enabled = true;
+            else
+                password.Enabled = false;
         }
     }
 }

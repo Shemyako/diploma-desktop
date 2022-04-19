@@ -33,7 +33,6 @@ namespace pesopolis
             dogs_list.GridLines = true;
             // Sort the items in the list in ascending order.
             dogs_list.Sorting = SortOrder.Ascending;
-
             // Create columns for the items and subitems.
             // Width of -2 indicates auto-size.
             dogs_list.Columns.Add("№", dogs_list.Width / 7, HorizontalAlignment.Left);
@@ -47,9 +46,23 @@ namespace pesopolis
             phone_textbox.Text = name1[2];
             tg_id_textbox.Text = name1[4];
             email_textbox.Text = name1[5];
+            login_lbl.Text = "Логин: " + name1[7];
+
+            if (form.role == "3")
+            {
+                is_admin.Visible = true;
+                is_admin.Enabled = true;
+                password.Visible = true;
+            }
 
             if (name1[6] == "1")
                 is_handler.Checked = true;
+            else if (name1[6] == "2")
+            {
+                is_admin.Checked = true;
+                login_lbl.Visible = true;
+            }
+                
 
             // Если у пользователя задана д.р.
             if (name1[3] != "None")
@@ -186,6 +199,8 @@ namespace pesopolis
             // Кинолог ли
             if (is_handler.Checked)
                 role = "1";
+            else if (is_admin.Checked && form.role == "3")
+                role = "2";
 
             // Запрос на проверку логина и пароля
             // route - ip на который дклвть запрос
@@ -196,7 +211,8 @@ namespace pesopolis
             address += "&id=" + id + "&name=" + name_textbox.Text + "&phone=" + phone_textbox.Text + "&birth=" + birth +
                 "&tg_id=" + tg_id_textbox.Text + "&email=" + email_textbox.Text + "&role=" + role;
             // MessageBox.Show(address);
-
+            if (role == "2")
+                address += "&password=" + password.Text;
             // Отправка запроса
             string line = form.send_request(address);
 
@@ -215,6 +231,11 @@ namespace pesopolis
                 // Всё хорошо
                 case "1":
                     MessageBox.Show("Успешно");
+                    if (words[1] != "None")
+                    {
+                        login_lbl.Text = "Логин: " + words[1];
+                        login_lbl.Visible = true;
+                    }
                     break;
 
                 // Реавторизация и обновление токена
@@ -246,6 +267,14 @@ namespace pesopolis
         private void Edit_client_Load(object sender, EventArgs e)
         {
             form.Show_menu(panel1);
+        }
+
+        private void is_admin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (is_admin.Checked)
+                password.Enabled = true;
+            else
+                password.Enabled = false;
         }
     }
 }

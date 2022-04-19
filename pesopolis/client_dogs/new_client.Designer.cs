@@ -38,6 +38,8 @@ namespace pesopolis
             this.birth_picker = new System.Windows.Forms.DateTimePicker();
             this.is_handler = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.is_admin = new System.Windows.Forms.CheckBox();
+            this.password = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,6 +127,31 @@ namespace pesopolis
             this.panel1.Size = new System.Drawing.Size(149, 496);
             this.panel1.TabIndex = 35;
             // 
+            // is_admin
+            // 
+            this.is_admin.AutoSize = true;
+            this.is_admin.Enabled = false;
+            this.is_admin.Font = new System.Drawing.Font("Georgia", 9.75F);
+            this.is_admin.Location = new System.Drawing.Point(332, 126);
+            this.is_admin.Name = "is_admin";
+            this.is_admin.Size = new System.Drawing.Size(133, 20);
+            this.is_admin.TabIndex = 28;
+            this.is_admin.Text = "Администратор";
+            this.is_admin.UseVisualStyleBackColor = true;
+            this.is_admin.Visible = false;
+            this.is_admin.CheckedChanged += new System.EventHandler(this.is_admin_CheckedChanged);
+            // 
+            // password
+            // 
+            this.password.Enabled = false;
+            this.password.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.password.Location = new System.Drawing.Point(488, 170);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(251, 22);
+            this.password.TabIndex = 3;
+            this.password.Text = "Пароль";
+            this.password.Visible = false;
+            // 
             // New_client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -132,12 +159,14 @@ namespace pesopolis
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.is_admin);
             this.Controls.Add(this.is_handler);
             this.Controls.Add(this.birth_picker);
             this.Controls.Add(this.save_bttn);
             this.Controls.Add(this.email_textbox);
             this.Controls.Add(this.tg_id_textbox);
             this.Controls.Add(this.phone_textbox);
+            this.Controls.Add(this.password);
             this.Controls.Add(this.name_textbox);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -163,5 +192,7 @@ namespace pesopolis
         private System.Windows.Forms.DateTimePicker birth_picker;
         private System.Windows.Forms.CheckBox is_handler;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox is_admin;
+        private System.Windows.Forms.TextBox password;
     }
 }

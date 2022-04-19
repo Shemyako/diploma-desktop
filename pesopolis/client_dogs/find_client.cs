@@ -31,6 +31,7 @@ namespace pesopolis
             listView1.Columns.Add("Тг. id", listView1.Width / 7, HorizontalAlignment.Center);
             listView1.Columns.Add("Почта", listView1.Width / 7, HorizontalAlignment.Center);
             listView1.Columns.Add("Роль", listView1.Width / 7, HorizontalAlignment.Center);
+            listView1.Columns.Add("Логин", listView1.Width / 7, HorizontalAlignment.Center);
         }
 
         private void Find_client_FormClosing(object sender, FormClosingEventArgs e)
@@ -73,7 +74,7 @@ namespace pesopolis
                         if (flag)
                         {
                             string[] sub_words = item.Split(new char[] { '|' });
-                            if (sub_words.Length == 7)
+                            if (sub_words.Length == 8)
                             {
                                 // Create three items and three sets of subitems for each item.
                                 ListViewItem item1 = new ListViewItem(sub_words[0], 0);
@@ -85,6 +86,7 @@ namespace pesopolis
                                 item1.SubItems.Add(sub_words[4]);
                                 item1.SubItems.Add(sub_words[5]);
                                 item1.SubItems.Add(sub_words[6]);
+                                item1.SubItems.Add(sub_words[7]);
                                 listView1.Items.Add(item1);
                             }
                             else
@@ -131,8 +133,8 @@ namespace pesopolis
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             MessageBox.Show(listView1.SelectedItems[0].SubItems[0].Text);
-            string[] to_send = new string[7];
-            for (int i = 0; i<7; i++)
+            string[] to_send = new string[8];
+            for (int i = 0; i<8; i++)
             {
                 to_send[i] = listView1.SelectedItems[0].SubItems[i].Text;
             }

@@ -92,22 +92,24 @@ namespace pesopolis
             string line = form.send_request(address);
             string[] words = line.Split(new char[] { '~' });
             // Копируем в список занятия. Этот список позже будет редактирвовать
-            lessons.Clear();
-            lessons.AddRange(words);
+            //lessons.Clear();
+            //lessons.AddRange(words);
             // Проверка на статус
             switch (words[0])
             {
                 // Всё норм
                 case "1":
                     // Удаляем статус операции
-                    lessons.RemoveAt(0);
+                    //lessons.RemoveAt(0);
                     // Удаляем тотал
-                    total_salary_lbl.Text = "Итого: " + lessons[1].ToString();
-                    
+                    //total_salary_lbl.Text = "Итого: " + lessons[1].ToString();
 
-                    if (lessons[1].ToString() != "0")
+                    total_salary_lbl.Text = "Итого: " + words[2].ToString();
+
+                    lessons_list.Items.Clear();
+                    if (words[2].ToString() != "0")
                     {
-                        lessons.RemoveAt(1);
+                        //lessons.RemoveAt(1);
                         show_lessons(words[1]);
                     }
                     break;
@@ -140,7 +142,7 @@ namespace pesopolis
         {
             // Сортировка и отображение занятий
 
-            lessons_list.Items.Clear();
+            
 
             //var query = from String stri in to_show
             //            orderby stri.Split(new char[] { '|' })[1]
