@@ -186,7 +186,7 @@ namespace pesopolis
                     // Удаляем статус операции
                     lessons.RemoveAt(0);
                     // Копируем в список занятия. Этот список позже будет редактирвовать
-                    
+                    lessons_te_edit.Clear();
                     lessons_te_edit.AddRange(lessons);
                     show_lessons(lessons);
                     break;

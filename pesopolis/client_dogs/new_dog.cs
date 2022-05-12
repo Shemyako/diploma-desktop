@@ -255,7 +255,7 @@ namespace pesopolis
             {
                 // Всё норм
                 case "1":
-                    MessageBox.Show(words[1]);
+                    //MessageBox.Show(words[1]);
                     Edit_client form1 = new Edit_client(form, to_be_back);
                     // this.FormClosing -= New_dog_FormClosing;
                     form1.Show();
@@ -323,7 +323,7 @@ namespace pesopolis
                         if (flag)
                         {
                             string[] sub_words = item.Split(new char[] { '|' });
-                            if (sub_words.Length == 7)
+                            if (sub_words.Length == 8)
                             {
                                 // Create three items and three sets of subitems for each item.
                                 ListViewItem item1 = new ListViewItem(sub_words[0], 0);
@@ -598,7 +598,7 @@ namespace pesopolis
             if (change_mod_bttn.Text == "Добавить хозяев")
             {
                 // Если пытаемся удалить последнего хозяина
-                if (owner_ids.Count == 1)
+                if (words.Length == 2)
                 {
                     MessageBox.Show("Вы пытаетесь удалить последнего хозяина. Это невозможно");
                     return;
@@ -615,10 +615,10 @@ namespace pesopolis
                 // Поулчаем ответ
                 string line = form.send_request(address);
                 // split ответа
-                string[] words = line.Split(new char[] { '~' });
+                string[] local_words = line.Split(new char[] { '~' });
 
                 // Проверка на статус
-                switch (words[0])
+                switch (local_words[0])
                 {
                     // Всё норм
                     case "1":
@@ -630,13 +630,13 @@ namespace pesopolis
 
                     // Была ошибка
                     case "0":
-                        MessageBox.Show(words[1]);
+                        MessageBox.Show(local_words[1]);
                         break;
 
                     // Реавторизация
                     case "3":
                         // Обновление токена
-                        form.Change_token(words[1]);
+                        form.Change_token(local_words[1]);
                         // Повторная отправка сообщения
                         dogs_list_DoubleClick(sender, e);
                         break;

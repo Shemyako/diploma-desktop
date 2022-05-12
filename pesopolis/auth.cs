@@ -135,7 +135,7 @@ namespace pesopolis
                 login = login_box.Text;
                 token = words[1];
                 role = words[2];
-                after_route = "token=" + token + "&login=" + login + "&mac=" + GetMACAddress();
+                after_route = "token=" + token + "&mac=" + GetMACAddress(); //+ "&login=" + login;
                 active_forms = 0;
                 Menu_form form1 = new Menu_form(this);
                 form1.Show();
@@ -150,7 +150,7 @@ namespace pesopolis
         public void Change_token(string token1)
         {
             token = token1;
-            after_route = "token=" + token + "&login=" + login + "&mac=" + GetMACAddress();
+            after_route = "token=" + token + "&mac=" + GetMACAddress(); //+ "&login=" + login;
         }
 
         public string send_request(string address)
