@@ -8,16 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace pesopolis.places
+namespace pesopolis
 {
-    public partial class Show_places : Form
+    public partial class Show_mails : Form
     {
         Auth_form form;
-        string[] courses;
-        public Show_places(Auth_form form1)
+        string[] ads;
+        public Show_mails(Auth_form form1)
         {
             form = form1;
-            form.active_forms = 1;
             InitializeComponent();
             //# Настройка listView
             // Set the view to show details.
@@ -30,16 +29,16 @@ namespace pesopolis.places
             cours_list.GridLines = true;
             // Sort the items in the list in ascending order.
             cours_list.Sorting = SortOrder.Ascending;
-            cours_list.Columns.Add("№", cours_list.Width / 5, HorizontalAlignment.Left);
-            cours_list.Columns.Add("Адрес", cours_list.Width * 2 / 5, HorizontalAlignment.Left);
-            cours_list.Columns.Add("Название", cours_list.Width / 5, HorizontalAlignment.Left);
-            cours_list.Columns.Add("Актуальность", cours_list.Width / 5, HorizontalAlignment.Left);
-            get_places();
+            cours_list.Columns.Add("№", cours_list.Width / 4, HorizontalAlignment.Left);
+            cours_list.Columns.Add("Дата рассылки", cours_list.Width  / 4, HorizontalAlignment.Left);
+            cours_list.Columns.Add("Тип рассылки", cours_list.Width / 4, HorizontalAlignment.Left);
+            cours_list.Columns.Add("Создатель", cours_list.Width / 4, HorizontalAlignment.Left);
+            get_ad();
         }
 
-        private void get_places()
+        private void get_ad()
         {
-            string address = form.route + "/get/places?" + form.after_route;
+            string address = form.route + "/get/ad?" + form.after_route;
             MessageBox.Show(address);
 
             // Отправка запроса
@@ -51,10 +50,10 @@ namespace pesopolis.places
             {
                 // Всё норм
                 case "1":
-                    courses = words;
+                    ads = words;
                     cours_list.Items.Clear();
 
-                    show_places();
+                    show_ads();
 
                     break;
 
@@ -68,13 +67,13 @@ namespace pesopolis.places
                     // Обновление токена
                     form.Change_token(words[1]);
                     // Повторная отправка сообщения
-                    get_places();
+                    get_ad();
                     break;
 
                 case "-1":
                     MessageBox.Show("Вам нужно пройти заново авторизацию");
                     form.Show();
-                    this.FormClosing -= Show_places_FormClosing;
+                    this.FormClosing -= Show_mails_FormClosing;
                     this.Close();
                     break;
 
@@ -82,17 +81,17 @@ namespace pesopolis.places
             }
         }
 
-        private void show_places()
+        private void show_ads()
         {
             // Проверка на статус
-            switch (courses[0])
+            switch (ads[0])
             {
                 // Всё норм
                 case "1":
                     cours_list.Items.Clear();
                     int uncorrect_amount = 0;
                     bool flag = false;
-                    foreach (var item in courses)
+                    foreach (var item in ads)
                     {
                         // Первый пропустится проход, т.к. первое число - статус операции
                         if (flag)
@@ -100,8 +99,6 @@ namespace pesopolis.places
                             string[] sub_words = item.Split(new char[] { '|' });
                             if (sub_words.Length == 4)
                             {
-                                if (is_actual_box.Checked && sub_words[3] == "False")
-                                    continue;
                                 // Create three items and three sets of subitems for each item.
                                 ListViewItem item1 = new ListViewItem(sub_words[0], 0);
                                 // Place a check mark next to the item.
@@ -128,48 +125,42 @@ namespace pesopolis.places
 
                 // Была ошибка
                 case "0":
-                    MessageBox.Show(courses[1]);
+                    MessageBox.Show(ads[1]);
                     break;
 
 
             }
         }
-        private void create_cours_Click(object sender, EventArgs e)
-        {
-            Edit_place new_form = new Edit_place(form);
-            new_form.Show();
-            new_form.Location = this.Location;
-            this.FormClosing -= Show_places_FormClosing;
-            this.Close();
-        }
 
-        private void is_actual_box_CheckedChanged(object sender, EventArgs e)
-        {
-            show_places();
-        }
-        private void cours_list_DoubleClick(object sender, EventArgs e)
-        {
-            MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
-            string[] to_send = new string[4];
-            for (int i = 0; i < 4; i++)
-            {
-                to_send[i] = cours_list.SelectedItems[0].SubItems[i].Text;
-            }
-            this.FormClosing -= Show_places_FormClosing;
-            Edit_place form1 = new Edit_place(form, to_send);
-            form1.Location = this.Location;
-            form1.Show();
-            this.Close();
-        }
-
-        private void Show_places_FormClosing(object sender, FormClosingEventArgs e)
+        private void Show_mails_FormClosing(object sender, FormClosingEventArgs e)
         {
             form.active_forms = 0;
         }
 
-        private void Show_places_Load(object sender, EventArgs e)
+        private void create_cours_Click(object sender, EventArgs e)
+        {
+            this.FormClosing -= Show_mails_FormClosing;
+            Create_mail_send new_from = new Create_mail_send(form);
+            new_from.Show();
+            new_from.Location = this.Location;
+            this.Close();
+            form.active_forms = 1;
+        }
+
+        private void Show_mails_Load(object sender, EventArgs e)
         {
             form.Show_menu(panel1);
+        }
+
+        private void cours_list_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
+            string to_send = cours_list.SelectedItems[0].SubItems[0].Text;
+            this.FormClosing -= Show_mails_FormClosing;
+            Create_mail_send form1 = new Create_mail_send(form, to_send);
+            form1.Location = this.Location;
+            form1.Show();
+            this.Close();
         }
     }
 }

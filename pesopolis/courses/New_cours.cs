@@ -146,6 +146,7 @@ namespace pesopolis
         {
             Create_new_cours new_form = new Create_new_cours(form);
             new_form.Show();
+            new_form.Location = this.Location;
             this.FormClosing -= New_cours_FormClosing;
             this.Close();
         }
@@ -165,6 +166,7 @@ namespace pesopolis
             }
             this.FormClosing -= New_cours_FormClosing;
             Create_new_cours form1 = new Create_new_cours(form, to_send);
+            form1.Location = this.Location;
             form1.Show();
             this.Close();
         }

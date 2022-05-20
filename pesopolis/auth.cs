@@ -202,7 +202,7 @@ namespace pesopolis
         public void Show_menu(Panel panel)
         {
             int location_h = 0;
-            Button[] btns = new Button[7];
+            Button[] btns = new Button[8];
             for (int i = 0; i < btns.Length; i++)
             {
                 btns[i] = new Button();
@@ -282,9 +282,23 @@ namespace pesopolis
             };
 
             btns[6].Text = "Загрузка БД";
+            if (role != "3")
+            {
+                btns[6].Enabled = false;
+            }
             btns[6].Click += (sender, args) =>
             {
                 New_database new_from = new New_database(this);
+                new_from.Show();
+                new_from.Location = btns[6].TopLevelControl.Location;
+                Application.OpenForms[1].Close();
+                active_forms = 1;
+            };
+
+            btns[7].Text = "Создание рассылки";
+            btns[7].Click += (sender, args) =>
+            {
+                Show_mails new_from = new Show_mails(this);
                 new_from.Show();
                 new_from.Location = btns[6].TopLevelControl.Location;
                 Application.OpenForms[1].Close();
