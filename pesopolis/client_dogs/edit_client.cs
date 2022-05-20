@@ -159,6 +159,7 @@ namespace pesopolis
         {
             New_dog new_from = new New_dog(form, id, name1: to_be_back);
             new_from.Show();
+            new_from.Location = this.Location;
             this.FormClosing -= edit_client_FormClosing;
             this.Close();
         }
@@ -260,6 +261,7 @@ namespace pesopolis
             this.FormClosing -= edit_client_FormClosing;
             New_dog form1 = new New_dog(form, id, dogs_list.SelectedItems[0].SubItems[0].Text, to_be_back);
             form1.Show();
+            form1.Location = this.Location;
             this.FormClosing -= edit_client_FormClosing;
             this.Close();
         }

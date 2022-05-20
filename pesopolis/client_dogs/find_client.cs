@@ -141,6 +141,7 @@ namespace pesopolis
             this.FormClosing -= Find_client_FormClosing;
             Edit_client form1 = new Edit_client(form, to_send);
             form1.Show();
+            form1.Location = this.Location;
             this.Close();
 
 

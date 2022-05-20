@@ -55,9 +55,9 @@ namespace pesopolis.places
             this.is_actual.Font = new System.Drawing.Font("Georgia", 9.75F);
             this.is_actual.Location = new System.Drawing.Point(331, 158);
             this.is_actual.Name = "is_actual";
-            this.is_actual.Size = new System.Drawing.Size(144, 20);
+            this.is_actual.Size = new System.Drawing.Size(177, 20);
             this.is_actual.TabIndex = 40;
-            this.is_actual.Text = "Актуальный курс";
+            this.is_actual.Text = "Актуальная площадка";
             this.is_actual.UseVisualStyleBackColor = true;
             // 
             // save_bttn
@@ -98,8 +98,7 @@ namespace pesopolis.places
             // 
             // Edit_place
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
@@ -110,6 +109,7 @@ namespace pesopolis.places
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Edit_place";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Изменить площадку";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Edit_place_FormClosing);
             this.Load += new System.EventHandler(this.Edit_place_Load);

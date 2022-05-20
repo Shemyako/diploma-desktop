@@ -295,6 +295,13 @@ namespace pesopolis
 
         private void add_to_list_bttn_Click(object sender, EventArgs e)
         {
+            // Проверка, выбрана ли собака
+            if (dogs_list.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Выберите нажатием собаку");
+                return;
+            }
+
             for (int i = 0; i < (dogs.Length - 1); i += 8)
             {
                 if (dogs[i] == dogs_list.SelectedItems[0].SubItems[0].Text)
@@ -330,7 +337,11 @@ namespace pesopolis
                     item.SubItems[3].Text.Split(new char[] { ' ' })[0] + "|" +
                     staff_comboBox.Text.Split(new char[] { ' ' })[0] + "|"; 
             }
-
+            if (lessons_list.Items.Count == 0)
+            {
+                address += ". " + date_picker.Text + "||||" +
+                    staff_comboBox.Text.Split(new char[] { ' ' })[0] + "|";
+            }
             MessageBox.Show(address);
 
             // Отправка запроса

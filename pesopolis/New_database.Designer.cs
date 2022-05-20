@@ -1,7 +1,7 @@
 ﻿
 namespace pesopolis
 {
-    partial class Menu_form
+    partial class New_database
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,9 @@ namespace pesopolis
             this.cours_bttn = new System.Windows.Forms.Button();
             this.find_client_bttn = new System.Windows.Forms.Button();
             this.new_client_bttn = new System.Windows.Forms.Button();
-            this.Сегодня = new System.Windows.Forms.Label();
+            this.check_file_bttn = new System.Windows.Forms.Button();
+            this.send_file_bttn = new System.Windows.Forms.Button();
+            this.address_textbox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +51,7 @@ namespace pesopolis
             this.logo.Location = new System.Drawing.Point(13, 14);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 1;
+            this.logo.TabIndex = 2;
             this.logo.TabStop = false;
             // 
             // panel1
@@ -64,7 +66,7 @@ namespace pesopolis
             this.panel1.Location = new System.Drawing.Point(13, 173);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 496);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 3;
             // 
             // button7
             // 
@@ -95,7 +97,6 @@ namespace pesopolis
             this.places_bttn.Text = "Площадки";
             this.places_bttn.UseVisualStyleBackColor = true;
             this.places_bttn.Visible = false;
-            this.places_bttn.Click += new System.EventHandler(this.places_bttn_Click);
             // 
             // lesson_bttn
             // 
@@ -106,7 +107,6 @@ namespace pesopolis
             this.lesson_bttn.Text = "Занятия";
             this.lesson_bttn.UseVisualStyleBackColor = true;
             this.lesson_bttn.Visible = false;
-            this.lesson_bttn.Click += new System.EventHandler(this.lesson_bttn_Click);
             // 
             // cours_bttn
             // 
@@ -117,7 +117,6 @@ namespace pesopolis
             this.cours_bttn.Text = "Окно курсов";
             this.cours_bttn.UseVisualStyleBackColor = true;
             this.cours_bttn.Visible = false;
-            this.cours_bttn.Click += new System.EventHandler(this.cours_bttn_Click);
             // 
             // find_client_bttn
             // 
@@ -128,7 +127,6 @@ namespace pesopolis
             this.find_client_bttn.Text = "Найти клиента";
             this.find_client_bttn.UseVisualStyleBackColor = true;
             this.find_client_bttn.Visible = false;
-            this.find_client_bttn.Click += new System.EventHandler(this.find_client_bttn_click);
             // 
             // new_client_bttn
             // 
@@ -139,32 +137,56 @@ namespace pesopolis
             this.new_client_bttn.Text = "Новый клинт";
             this.new_client_bttn.UseVisualStyleBackColor = true;
             this.new_client_bttn.Visible = false;
-            this.new_client_bttn.Click += new System.EventHandler(this.New_client_bttn_Click);
             // 
-            // Сегодня
+            // check_file_bttn
             // 
-            this.Сегодня.AutoSize = true;
-            this.Сегодня.Font = new System.Drawing.Font("Georgia", 9.75F);
-            this.Сегодня.Location = new System.Drawing.Point(379, 185);
-            this.Сегодня.Name = "Сегодня";
-            this.Сегодня.Size = new System.Drawing.Size(45, 16);
-            this.Сегодня.TabIndex = 3;
-            this.Сегодня.Text = "label1";
+            this.check_file_bttn.Font = new System.Drawing.Font("Georgia", 9.75F);
+            this.check_file_bttn.Location = new System.Drawing.Point(300, 176);
+            this.check_file_bttn.Name = "check_file_bttn";
+            this.check_file_bttn.Size = new System.Drawing.Size(184, 55);
+            this.check_file_bttn.TabIndex = 4;
+            this.check_file_bttn.Text = "Выбрать файл";
+            this.check_file_bttn.UseVisualStyleBackColor = true;
+            this.check_file_bttn.Click += new System.EventHandler(this.check_file_bttn_Click);
             // 
-            // Menu_form
+            // send_file_bttn
+            // 
+            this.send_file_bttn.Font = new System.Drawing.Font("Georgia", 9.75F);
+            this.send_file_bttn.Location = new System.Drawing.Point(300, 334);
+            this.send_file_bttn.Name = "send_file_bttn";
+            this.send_file_bttn.Size = new System.Drawing.Size(184, 55);
+            this.send_file_bttn.TabIndex = 4;
+            this.send_file_bttn.Text = "Отправить";
+            this.send_file_bttn.UseVisualStyleBackColor = true;
+            this.send_file_bttn.Click += new System.EventHandler(this.send_file_bttn_Click);
+            // 
+            // address_textbox
+            // 
+            this.address_textbox.Enabled = false;
+            this.address_textbox.Font = new System.Drawing.Font("Georgia", 9.75F);
+            this.address_textbox.Location = new System.Drawing.Point(663, 183);
+            this.address_textbox.Multiline = true;
+            this.address_textbox.Name = "address_textbox";
+            this.address_textbox.Size = new System.Drawing.Size(420, 55);
+            this.address_textbox.TabIndex = 5;
+            this.address_textbox.Text = "Выбранный файл:";
+            // 
+            // New_database
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.Сегодня);
+            this.Controls.Add(this.address_textbox);
+            this.Controls.Add(this.send_file_bttn);
+            this.Controls.Add(this.check_file_bttn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Menu_form";
+            this.Name = "New_database";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Меню";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_form_FormClosing);
-            this.Load += new System.EventHandler(this.Menu_form_Load);
+            this.Text = "Загрузка базы данных";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.New_database_FormClosing);
+            this.Load += new System.EventHandler(this.New_database_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -176,13 +198,15 @@ namespace pesopolis
 
         private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button new_client_bttn;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button places_bttn;
         private System.Windows.Forms.Button lesson_bttn;
         private System.Windows.Forms.Button cours_bttn;
         private System.Windows.Forms.Button find_client_bttn;
-        private System.Windows.Forms.Label Сегодня;
+        private System.Windows.Forms.Button new_client_bttn;
+        private System.Windows.Forms.Button check_file_bttn;
+        private System.Windows.Forms.Button send_file_bttn;
+        private System.Windows.Forms.TextBox address_textbox;
     }
 }

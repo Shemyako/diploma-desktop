@@ -86,8 +86,7 @@ namespace pesopolis
             // 
             // Find_client
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
@@ -97,6 +96,7 @@ namespace pesopolis
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Find_client";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Найти клиента";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Find_client_FormClosing);
             this.Load += new System.EventHandler(this.Find_client_Load);

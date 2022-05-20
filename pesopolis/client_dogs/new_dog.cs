@@ -43,7 +43,7 @@ namespace pesopolis
             }
 
             get_info();
-            get_courses();
+            // get_courses();
             // Set the view to show details.
             dogs_list.View = View.Details;
             // Allow the user to rearrange columns.
@@ -144,7 +144,12 @@ namespace pesopolis
                         switch (sub1)
                         {
                             case 1:
-                                cours_comboBox.Items.AddRange(sub_words);
+                                courses = sub_words;
+                                foreach (var cours in courses)
+                                {
+                                    cours_comboBox.Items.Add(cours.Replace('@', ' '));
+                                }
+                                // cours_comboBox.Items.AddRange(sub_words);
                                 break;
                             case 2:
                                 place_comboBox.Items.AddRange(sub_words);
@@ -259,6 +264,7 @@ namespace pesopolis
                     Edit_client form1 = new Edit_client(form, to_be_back);
                     // this.FormClosing -= New_dog_FormClosing;
                     form1.Show();
+                    form1.Location = this.Location;
                     this.FormClosing -= New_dog_FormClosing;
                     this.Close();
                     break;
@@ -404,7 +410,7 @@ namespace pesopolis
                             if (sub_words.Length == 7)
                             {
                                 // Create three items and three sets of subitems for each item.
-                                owner_ids.Add(sub_words[0]);
+                                // owner_ids.Add(sub_words[0]);
                                 ListViewItem item1 = new ListViewItem(sub_words[0], 0);
                                 // Place a check mark next to the item.
                                 // item1.Checked = true;
@@ -446,8 +452,26 @@ namespace pesopolis
             words = line.Split(new char[] { '~' });
             owner_ids.Clear();
             switch (words[0])
-            {
-                
+            {   
+                // Добавляем id хозяев
+                case "1":
+                    bool flag = false;
+                    foreach (var item in words)
+                    {
+                        // Первый пропустится проход, т.к. первое число - статус операции
+                        if (flag)
+                        {
+                            string[] sub_words = item.Split(new char[] { '|' });
+                            if (sub_words.Length == 7)
+                            {
+                                owner_ids.Add(sub_words[0]);
+                                
+                            }
+
+                        }
+                        flag = true;
+                    }
+                    break;
                 // Была ошибка
                 case "0":
                     MessageBox.Show(words[1]);
@@ -479,85 +503,30 @@ namespace pesopolis
             dogs_list.Columns.Add("Название", dogs_list.Width / 4, HorizontalAlignment.Left);
             dogs_list.Columns.Add("Кол-во занятий", dogs_list.Width / 4, HorizontalAlignment.Left);
             dogs_list.Columns.Add("Цена", dogs_list.Width / 4, HorizontalAlignment.Left);
-            switch (courses[0])
-            {
-                // Всё норм
-                case "1":
-                    int uncorrect_amount = 0;
-                    bool flag = false;
-                    foreach (var item in courses)
-                    {
-                        // Первый пропустится проход, т.к. первое число - статус операции
-                        if (flag)
-                        {
-                            string[] sub_words = item.Split(new char[] { '|' });
-                            if (sub_words.Length == 5)
-                            {
-                                // Create three items and three sets of subitems for each item.
-                                owner_ids.Add(sub_words[0]);
-                                ListViewItem item1 = new ListViewItem(sub_words[0], 0);
-                                // Place a check mark next to the item.
-                                // item1.Checked = true;
-                                item1.SubItems.Add(sub_words[1]);
-                                item1.SubItems.Add(sub_words[2]);
-                                item1.SubItems.Add(sub_words[3]);
-                                dogs_list.Items.Add(item1);
-                            }
-                            else
-                            {
-                                uncorrect_amount += 1;
-                            }
-
-                        }
-                        flag = true;
-                    }
-                    // Если были ошибки в значениях
-                    if (uncorrect_amount > 0)
-                    {
-                        MessageBox.Show("Некорректных значений пришло: " + Convert.ToString(uncorrect_amount));
-                    }
-                    break;
-            }
-        }
-
-        private void get_courses()
-        {
             
-
-            // Удаляем выбранного пользователя
-            string address = form.route + "/get/courses?" + form.after_route;
-
-            MessageBox.Show(address);
-            // Поулчаем ответ
-            string line = form.send_request(address);
-            // split ответа
-            courses = line.Split(new char[] { '~' });
-
-            // Проверка на статус
-            switch (courses[0])
+            int uncorrect_amount = 0;
+            foreach (var item in courses)
             {
-                
-                // Была ошибка
-                case "0":
-                    MessageBox.Show(courses[1]);
-                    break;
-
-                // Реавторизация
-                case "3":
-                    // Обновление токена
-                    form.Change_token(courses[1]);
-                    // Повторная отправка сообщения
-                    get_courses();
-                    break;
-
-                case "-1":
-                    MessageBox.Show("Вам нужно пройти заново авторизацию");
-                    form.Show();
-                    this.FormClosing -= New_dog_FormClosing;
-                    this.Close();
-                    break;
-
-
+                string[] sub_words = item.Split(new char[] { '@' });
+                if (sub_words.Length == 4)
+                {
+                    ListViewItem item1 = new ListViewItem(sub_words[0], 0);
+                    // Place a check mark next to the item.
+                    // item1.Checked = true;
+                    item1.SubItems.Add(sub_words[1]);
+                    item1.SubItems.Add(sub_words[2]);
+                    item1.SubItems.Add(sub_words[3]);
+                    dogs_list.Items.Add(item1);
+                }
+                else
+                {
+                    uncorrect_amount += 1;
+                }
+            }
+            // Если были ошибки в значениях
+            if (uncorrect_amount > 1)
+            {
+                MessageBox.Show("Некорректных значений пришло: " + Convert.ToString(uncorrect_amount - 1));
             }
         }
 
@@ -766,6 +735,18 @@ namespace pesopolis
         private void New_dog_Load(object sender, EventArgs e)
         {
             form.Show_menu(panel1);
+        }
+
+        private void back_bttn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы уверены, что хотите выйти? Данные не сохранятся", "Выход", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+            Edit_client form1 = new Edit_client(form, to_be_back);
+            // this.FormClosing -= New_dog_FormClosing;
+            form1.Show();
+            form1.Location = this.Location;
+            this.FormClosing -= New_dog_FormClosing;
+            this.Close();
         }
     }
 }

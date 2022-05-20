@@ -42,6 +42,7 @@ namespace pesopolis
             this.change_mod_bttn = new System.Windows.Forms.Button();
             this.is_actual_box = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.back_bttn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,10 +174,20 @@ namespace pesopolis
             this.panel1.Size = new System.Drawing.Size(149, 496);
             this.panel1.TabIndex = 35;
             // 
+            // back_bttn
+            // 
+            this.back_bttn.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.back_bttn.Location = new System.Drawing.Point(217, 618);
+            this.back_bttn.Name = "back_bttn";
+            this.back_bttn.Size = new System.Drawing.Size(159, 51);
+            this.back_bttn.TabIndex = 14;
+            this.back_bttn.Text = "Назад";
+            this.back_bttn.UseVisualStyleBackColor = true;
+            this.back_bttn.Click += new System.EventHandler(this.back_bttn_Click);
+            // 
             // New_dog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
@@ -187,6 +198,7 @@ namespace pesopolis
             this.Controls.Add(this.place_comboBox);
             this.Controls.Add(this.staff_comboBox);
             this.Controls.Add(this.find_user_bttn);
+            this.Controls.Add(this.back_bttn);
             this.Controls.Add(this.save_bttn);
             this.Controls.Add(this.breed_textbox);
             this.Controls.Add(this.phone_textBox);
@@ -194,6 +206,7 @@ namespace pesopolis
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "New_dog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Редактор собак";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.New_dog_FormClosing);
             this.Load += new System.EventHandler(this.New_dog_Load);
@@ -218,5 +231,6 @@ namespace pesopolis
         private System.Windows.Forms.Button change_mod_bttn;
         private System.Windows.Forms.CheckBox is_actual_box;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button back_bttn;
     }
 }

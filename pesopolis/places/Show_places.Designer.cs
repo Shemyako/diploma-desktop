@@ -51,11 +51,11 @@ namespace pesopolis.places
             this.is_actual_box.AutoSize = true;
             this.is_actual_box.Checked = true;
             this.is_actual_box.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.is_actual_box.Location = new System.Drawing.Point(946, 112);
+            this.is_actual_box.Location = new System.Drawing.Point(926, 112);
             this.is_actual_box.Name = "is_actual_box";
-            this.is_actual_box.Size = new System.Drawing.Size(138, 17);
+            this.is_actual_box.Size = new System.Drawing.Size(158, 17);
             this.is_actual_box.TabIndex = 36;
-            this.is_actual_box.Text = "Скрыть старые курсы";
+            this.is_actual_box.Text = "Скрыть старые площадки";
             this.is_actual_box.UseVisualStyleBackColor = true;
             this.is_actual_box.CheckedChanged += new System.EventHandler(this.is_actual_box_CheckedChanged);
             // 
@@ -66,7 +66,7 @@ namespace pesopolis.places
             this.create_cours.Name = "create_cours";
             this.create_cours.Size = new System.Drawing.Size(189, 31);
             this.create_cours.TabIndex = 35;
-            this.create_cours.Text = "Создать новый курс";
+            this.create_cours.Text = "Создать новую площадку";
             this.create_cours.UseVisualStyleBackColor = true;
             this.create_cours.Click += new System.EventHandler(this.create_cours_Click);
             // 
@@ -89,8 +89,7 @@ namespace pesopolis.places
             // 
             // Show_places
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
@@ -100,6 +99,7 @@ namespace pesopolis.places
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Show_places";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Все площадки";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Show_places_FormClosing);
             this.Load += new System.EventHandler(this.Show_places_Load);

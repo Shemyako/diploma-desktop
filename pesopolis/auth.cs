@@ -139,6 +139,7 @@ namespace pesopolis
                 active_forms = 0;
                 Menu_form form1 = new Menu_form(this);
                 form1.Show();
+                form1.Location = this.Location;
                 this.Hide();
             }
             else
@@ -181,10 +182,27 @@ namespace pesopolis
             return line;
         }
 
+        public string Send_file(string file)
+        {
+            string line = "Готово";
+            WebClient myWebClient = new WebClient();
+            try
+            {
+                byte[] responseArray = myWebClient.UploadFile(route + "/upload/database?" + after_route, file);
+            }
+            catch (WebException ex)
+            {
+                HttpWebResponse httpResponse = (HttpWebResponse)ex.Response;
+                line = "0~" + string.Format("Статусный код ошибки: {0} - {1}",
+                        (int)httpResponse.StatusCode, httpResponse.StatusCode);
+            }
+            return line;
+        }
+
         public void Show_menu(Panel panel)
         {
             int location_h = 0;
-            Button[] btns = new Button[6];
+            Button[] btns = new Button[7];
             for (int i = 0; i < btns.Length; i++)
             {
                 btns[i] = new Button();
@@ -205,7 +223,9 @@ namespace pesopolis
             btns[0].Click += (sender, args) =>
             {
                 New_client new_from = new New_client(this);
+                // MessageBox.Show(sender.TopLevelControl.Location.ToString());
                 new_from.Show();
+                new_from.Location = btns[0].TopLevelControl.Location;
                 Application.OpenForms[1].Close();
                 active_forms = 1;
             };
@@ -216,6 +236,7 @@ namespace pesopolis
             {
                 Find_client new_from = new Find_client(this);
                 new_from.Show();
+                new_from.Location = btns[1].TopLevelControl.Location;
                 Application.OpenForms[1].Close();
                 active_forms = 1;
             };
@@ -225,6 +246,7 @@ namespace pesopolis
             {
                 Lessons new_from = new Lessons(this);
                 new_from.Show();
+                new_from.Location = btns[2].TopLevelControl.Location;
                 Application.OpenForms[1].Close();
                 active_forms = 1;
             };
@@ -234,6 +256,7 @@ namespace pesopolis
             {
                 New_cours new_from = new New_cours(this);
                 new_from.Show();
+                new_from.Location = btns[3].TopLevelControl.Location;
                 Application.OpenForms[1].Close();
                 active_forms = 1;
             };
@@ -243,6 +266,7 @@ namespace pesopolis
             {
                 Show_places new_from = new Show_places(this);
                 new_from.Show();
+                new_from.Location = btns[4].TopLevelControl.Location;
                 Application.OpenForms[1].Close();
                 active_forms = 1;
             };
@@ -252,6 +276,17 @@ namespace pesopolis
             {
                 Salary new_from = new Salary(this);
                 new_from.Show();
+                new_from.Location = btns[5].TopLevelControl.Location;
+                Application.OpenForms[1].Close();
+                active_forms = 1;
+            };
+
+            btns[6].Text = "Загрузка БД";
+            btns[6].Click += (sender, args) =>
+            {
+                New_database new_from = new New_database(this);
+                new_from.Show();
+                new_from.Location = btns[6].TopLevelControl.Location;
                 Application.OpenForms[1].Close();
                 active_forms = 1;
             };

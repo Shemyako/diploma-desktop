@@ -71,6 +71,8 @@ namespace pesopolis
 
             for (int i = 0; i < (handlers.Length - 1); i += 2)
                 staff_comboBox.Items.Add(handlers[i] + " " + handlers[i + 1]);
+
+            MessageBox.Show(this.Size.ToString());
         }
 
         private void Salary_FormClosing(object sender, FormClosingEventArgs e)

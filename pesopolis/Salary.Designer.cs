@@ -31,8 +31,6 @@ namespace pesopolis
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.logo = new System.Windows.Forms.PictureBox();
-            this.cancel_bttn = new System.Windows.Forms.Button();
-            this.save_bttn = new System.Windows.Forms.Button();
             this.staff_comboBox = new System.Windows.Forms.ComboBox();
             this.date_picker = new System.Windows.Forms.DateTimePicker();
             this.lessons_list = new System.Windows.Forms.ListView();
@@ -55,28 +53,6 @@ namespace pesopolis
             this.logo.Size = new System.Drawing.Size(149, 153);
             this.logo.TabIndex = 39;
             this.logo.TabStop = false;
-            // 
-            // cancel_bttn
-            // 
-            this.cancel_bttn.BackColor = System.Drawing.Color.Brown;
-            this.cancel_bttn.Font = new System.Drawing.Font("Georgia", 10F);
-            this.cancel_bttn.Location = new System.Drawing.Point(768, 551);
-            this.cancel_bttn.Name = "cancel_bttn";
-            this.cancel_bttn.Size = new System.Drawing.Size(85, 34);
-            this.cancel_bttn.TabIndex = 44;
-            this.cancel_bttn.Text = "Отменить";
-            this.cancel_bttn.UseVisualStyleBackColor = false;
-            // 
-            // save_bttn
-            // 
-            this.save_bttn.BackColor = System.Drawing.Color.LawnGreen;
-            this.save_bttn.Font = new System.Drawing.Font("Georgia", 10F);
-            this.save_bttn.Location = new System.Drawing.Point(346, 551);
-            this.save_bttn.Name = "save_bttn";
-            this.save_bttn.Size = new System.Drawing.Size(90, 34);
-            this.save_bttn.TabIndex = 45;
-            this.save_bttn.Text = "Сохранить";
-            this.save_bttn.UseVisualStyleBackColor = false;
             // 
             // staff_comboBox
             // 
@@ -120,13 +96,10 @@ namespace pesopolis
             // 
             // Salary
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.total_salary_lbl);
-            this.Controls.Add(this.cancel_bttn);
-            this.Controls.Add(this.save_bttn);
             this.Controls.Add(this.staff_comboBox);
             this.Controls.Add(this.date_picker);
             this.Controls.Add(this.lessons_list);
@@ -134,6 +107,7 @@ namespace pesopolis
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Salary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Зарплата";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Salary_FormClosing);
             this.Shown += new System.EventHandler(this.Salary_Shown);
@@ -147,8 +121,6 @@ namespace pesopolis
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.Button cancel_bttn;
-        private System.Windows.Forms.Button save_bttn;
         private System.Windows.Forms.ComboBox staff_comboBox;
         private System.Windows.Forms.DateTimePicker date_picker;
         private System.Windows.Forms.ListView lessons_list;

@@ -45,14 +45,29 @@ namespace pesopolis
             {
                 if (!char.IsDigit(item))
                 {
-                    MessageBox.Show("Введите номер не через +7");
+                    MessageBox.Show("Введите номер не через 8");
                     return; //если хоть один символ не число, то выкидываешь "ложь"
                 }
             }
 
+            
+
             // Заполнение None пустые поля
             if (tg_id_textbox.Text == "" || tg_id_textbox.Text == "tg_id")
                 tg_id_textbox.Text = "Null";
+            else
+            {
+                // Проверка на вводимый tg id
+                foreach (var item in tg_id_textbox.Text)
+                {
+                    if (!char.IsDigit(item))
+                    {
+                        MessageBox.Show("Введите корректный tg id");
+                        return; //если хоть один символ не число, то выкидываешь "ложь"
+                    }
+                }
+            }
+
             // Null в д.р.
             if (!birth_picker.Checked)
                 birth = "Null";

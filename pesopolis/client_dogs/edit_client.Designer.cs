@@ -200,8 +200,7 @@ namespace pesopolis
             // 
             // Edit_client
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.password);
@@ -221,6 +220,7 @@ namespace pesopolis
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Edit_client";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Редактировать клиента";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.edit_client_FormClosing);
             this.Load += new System.EventHandler(this.Edit_client_Load);

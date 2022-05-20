@@ -140,6 +140,8 @@ namespace pesopolis
             // save_bttn
             // 
             this.save_bttn.BackColor = System.Drawing.Color.LawnGreen;
+            this.save_bttn.FlatAppearance.BorderSize = 0;
+            this.save_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save_bttn.Font = new System.Drawing.Font("Georgia", 10F);
             this.save_bttn.Location = new System.Drawing.Point(190, 532);
             this.save_bttn.Name = "save_bttn";
@@ -152,6 +154,8 @@ namespace pesopolis
             // cancel_bttn
             // 
             this.cancel_bttn.BackColor = System.Drawing.Color.Brown;
+            this.cancel_bttn.FlatAppearance.BorderSize = 0;
+            this.cancel_bttn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancel_bttn.Font = new System.Drawing.Font("Georgia", 10F);
             this.cancel_bttn.Location = new System.Drawing.Point(612, 532);
             this.cancel_bttn.Name = "cancel_bttn";
@@ -179,8 +183,7 @@ namespace pesopolis
             // 
             // Lessons
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
@@ -198,6 +201,7 @@ namespace pesopolis
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Lessons";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Занятия";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Lessons_FormClosing);
             this.Load += new System.EventHandler(this.Lessons_Load);

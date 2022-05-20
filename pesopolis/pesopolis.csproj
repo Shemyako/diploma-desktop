@@ -100,6 +100,12 @@
     <Compile Include="client_dogs\new_client.Designer.cs">
       <DependentUpon>new_client.cs</DependentUpon>
     </Compile>
+    <Compile Include="New_database.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_database.Designer.cs">
+      <DependentUpon>New_database.cs</DependentUpon>
+    </Compile>
     <Compile Include="places\Edit_place.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="client_dogs\new_client.resx">
       <DependentUpon>new_client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_database.resx">
+      <DependentUpon>New_database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="places\Edit_place.resx">
       <DependentUpon>Edit_place.cs</DependentUpon>
