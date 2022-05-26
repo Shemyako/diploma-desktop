@@ -163,6 +163,11 @@ namespace pesopolis
 
         private void staff_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (staff_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите кинолога");
+                return;
+            }
             // Тут получаем расписание кинолог на конкретную дату
 
             string address = form.route + "/get/schedule?" + form.after_route;

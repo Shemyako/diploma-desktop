@@ -29,12 +29,13 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Salary));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.staff_comboBox = new System.Windows.Forms.ComboBox();
             this.date_picker = new System.Windows.Forms.DateTimePicker();
             this.lessons_list = new System.Windows.Forms.ListView();
             this.total_salary_lbl = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,15 +45,6 @@ namespace pesopolis
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(149, 496);
             this.panel1.TabIndex = 40;
-            // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 39;
-            this.logo.TabStop = false;
             // 
             // staff_comboBox
             // 
@@ -94,6 +86,15 @@ namespace pesopolis
             this.total_salary_lbl.TabIndex = 46;
             this.total_salary_lbl.Text = "Итого:";
             // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 39;
+            this.logo.TabStop = false;
+            // 
             // Salary
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -106,6 +107,7 @@ namespace pesopolis
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Salary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Зарплата";

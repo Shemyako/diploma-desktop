@@ -93,7 +93,11 @@ namespace pesopolis
                             switch (sub)
                             {
                                 case 1:
-                                    cours_comboBox.Items.AddRange(sub_words);
+                                    courses = sub_words;
+                                    foreach (var cours in courses)
+                                    {
+                                        cours_comboBox.Items.Add(cours.Replace('@', ' '));
+                                    }
                                     break;
                                 case 2:
                                     place_comboBox.Items.AddRange(sub_words);
@@ -214,6 +218,14 @@ namespace pesopolis
 
         private void save_bttn_Click(object sender, EventArgs e)
         {
+            if (staff_comboBox.SelectedIndex == -1 || 
+                    place_comboBox.SelectedIndex == -1 ||
+                    cours_comboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Введите корректные данные");
+                return;
+            }
+
             string address = form.route + "/new/dog?" + form.after_route;
             // MessageBox.Show(address);
             string staff_id = staff_comboBox.Text.Split(new char[] { ' ' })[0];

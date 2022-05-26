@@ -29,7 +29,7 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
-            this.logo = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lessons));
             this.lessons_list = new System.Windows.Forms.ListView();
             this.date_picker = new System.Windows.Forms.DateTimePicker();
             this.staff_comboBox = new System.Windows.Forms.ComboBox();
@@ -42,17 +42,9 @@ namespace pesopolis
             this.cancel_bttn = new System.Windows.Forms.Button();
             this.type_of_lesson_combobox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 5;
-            this.logo.TabStop = false;
             // 
             // lessons_list
             // 
@@ -181,6 +173,15 @@ namespace pesopolis
             this.panel1.Size = new System.Drawing.Size(149, 496);
             this.panel1.TabIndex = 38;
             // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 5;
+            this.logo.TabStop = false;
+            // 
             // Lessons
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -200,6 +201,7 @@ namespace pesopolis
             this.Controls.Add(this.lessons_list);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lessons";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Занятия";

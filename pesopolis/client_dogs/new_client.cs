@@ -17,6 +17,7 @@ namespace pesopolis
                 is_admin.Visible = true;
                 is_admin.Enabled = true;
                 password.Visible = true;
+                login_lbl.Visible = true;
             }
                 
         }
@@ -33,8 +34,8 @@ namespace pesopolis
             string birth = birth_picker.Text;
             string role = "0";
             // Проверка на дуркака
-            if (name_textbox.Text == "" || phone_textbox.Text == "" || email_textbox.Text == "" ||
-                name_textbox.Text == "Имя" || phone_textbox.Text == "Телефон" || email_textbox.Text == "e-mail")
+            if (name_textbox.Text == "" || phone_textbox.Text == "" ||
+                name_textbox.Text == "Имя" || phone_textbox.Text == "Телефон")
             {
                 MessageBox.Show("Заполните поля корректно");
                 return;
@@ -50,11 +51,11 @@ namespace pesopolis
                 }
             }
 
-            
 
+            string tg_id;
             // Заполнение None пустые поля
             if (tg_id_textbox.Text == "" || tg_id_textbox.Text == "tg_id")
-                tg_id_textbox.Text = "Null";
+                tg_id = "Null";
             else
             {
                 // Проверка на вводимый tg id
@@ -62,10 +63,12 @@ namespace pesopolis
                 {
                     if (!char.IsDigit(item))
                     {
+                        tg_id = "Null";
                         MessageBox.Show("Введите корректный tg id");
                         return; //если хоть один символ не число, то выкидываешь "ложь"
                     }
                 }
+                tg_id = tg_id_textbox.Text;
             }
 
             // Null в д.р.
@@ -76,6 +79,12 @@ namespace pesopolis
                 role = "1";
             else if (is_admin.Checked && form.role == "3")
                 role = "2";
+            // Null ли в почте
+            string mail;
+            if (email_textbox.Text == "" || email_textbox.Text == "e-mail")
+                mail = "Null";
+            else
+                mail = email_textbox.Text;
 
             // Запрос на проверку логина и пароля
             // route - ip на который дклвть запрос
@@ -84,7 +93,7 @@ namespace pesopolis
             string address = form.route + "/new/client?" + form.after_route;
             
             address += "&name=" + name_textbox.Text + "&phone=" + phone_textbox.Text + "&birth=" + birth + 
-                "&tg_id=" + tg_id_textbox.Text + "&email=" + email_textbox.Text + "&role=" + role;
+                "&tg_id=" + tg_id + "&email=" + mail + "&role=" + role;
             // MessageBox.Show(address);
             if (role == "2")
                 address += "&password=" + password.Text;
@@ -106,6 +115,8 @@ namespace pesopolis
                 // Всё хорошо
                 case "1": 
                     MessageBox.Show("Успешно");
+                    if (role == "2")
+                        login_lbl.Text = "Логин: " + words[1];
                     break;
 
                 // Реавторизация и обновление токена
@@ -132,9 +143,18 @@ namespace pesopolis
         private void is_admin_CheckedChanged(object sender, EventArgs e)
         {
             if (is_admin.Checked)
+            {
                 password.Enabled = true;
+                is_handler.Checked = false;
+            }
             else
                 password.Enabled = false;
+        }
+
+        private void is_handler_CheckedChanged(object sender, EventArgs e)
+        {
+            if (is_handler.Checked)
+                is_admin.Checked = false;
         }
     }
 }

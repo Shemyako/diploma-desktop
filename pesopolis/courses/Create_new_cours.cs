@@ -74,6 +74,7 @@ namespace pesopolis
                 case "1":
                     MessageBox.Show("Готово");
                     New_cours form1 = new New_cours(form);
+                    form1.Location = this.Location;
                     form1.Show();
                     this.FormClosing -= Create_new_cours_FormClosing;
                     this.Close();
@@ -112,6 +113,18 @@ namespace pesopolis
         private void Create_new_cours_Load(object sender, EventArgs e)
         {
             form.Show_menu(panel1);
+        }
+
+        private void back_bttn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы уверены, что хотите выйти? Данные не сохранятся", "Выход", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+            New_cours form1 = new New_cours(form);
+            // this.FormClosing -= New_dog_FormClosing;
+            form1.Show();
+            form1.Location = this.Location;
+            this.FormClosing -= Create_new_cours_FormClosing;
+            this.Close();
         }
     }
 }

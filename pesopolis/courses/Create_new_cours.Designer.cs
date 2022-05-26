@@ -29,24 +29,17 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
-            this.logo = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Create_new_cours));
             this.is_actual = new System.Windows.Forms.CheckBox();
             this.save_bttn = new System.Windows.Forms.Button();
             this.price_textbox = new System.Windows.Forms.TextBox();
             this.amount_textbox = new System.Windows.Forms.TextBox();
             this.name_textbox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.back_bttn = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 5;
-            this.logo.TabStop = false;
             // 
             // is_actual
             // 
@@ -106,11 +99,32 @@ namespace pesopolis
             this.panel1.Size = new System.Drawing.Size(149, 496);
             this.panel1.TabIndex = 36;
             // 
+            // back_bttn
+            // 
+            this.back_bttn.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.back_bttn.Location = new System.Drawing.Point(217, 618);
+            this.back_bttn.Name = "back_bttn";
+            this.back_bttn.Size = new System.Drawing.Size(159, 51);
+            this.back_bttn.TabIndex = 37;
+            this.back_bttn.Text = "Назад";
+            this.back_bttn.UseVisualStyleBackColor = true;
+            this.back_bttn.Click += new System.EventHandler(this.back_bttn_Click);
+            // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 5;
+            this.logo.TabStop = false;
+            // 
             // Create_new_cours
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.back_bttn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_actual);
             this.Controls.Add(this.save_bttn);
@@ -119,6 +133,7 @@ namespace pesopolis
             this.Controls.Add(this.name_textbox);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Create_new_cours";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Создать новый курс";
@@ -139,5 +154,6 @@ namespace pesopolis
         private System.Windows.Forms.TextBox amount_textbox;
         private System.Windows.Forms.TextBox name_textbox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button back_bttn;
     }
 }

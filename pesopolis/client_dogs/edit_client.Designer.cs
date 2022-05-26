@@ -29,7 +29,7 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
-            this.logo = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_client));
             this.save_bttn = new System.Windows.Forms.Button();
             this.email_textbox = new System.Windows.Forms.TextBox();
             this.tg_id_textbox = new System.Windows.Forms.TextBox();
@@ -44,17 +44,9 @@ namespace pesopolis
             this.is_admin = new System.Windows.Forms.CheckBox();
             this.password = new System.Windows.Forms.TextBox();
             this.login_lbl = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 2;
-            this.logo.TabStop = false;
             // 
             // save_bttn
             // 
@@ -198,6 +190,15 @@ namespace pesopolis
             this.login_lbl.Text = "Логин:";
             this.login_lbl.Visible = false;
             // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 2;
+            this.logo.TabStop = false;
+            // 
             // Edit_client
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -219,6 +220,7 @@ namespace pesopolis
             this.Controls.Add(this.name_textbox);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Edit_client";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Редактировать клиента";

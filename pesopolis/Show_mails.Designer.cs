@@ -29,6 +29,7 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Show_mails));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -37,9 +38,9 @@ namespace pesopolis
             this.cours_bttn = new System.Windows.Forms.Button();
             this.find_client_bttn = new System.Windows.Forms.Button();
             this.new_client_bttn = new System.Windows.Forms.Button();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.cours_list = new System.Windows.Forms.ListView();
             this.create_cours = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
@@ -128,15 +129,6 @@ namespace pesopolis
             this.new_client_bttn.UseVisualStyleBackColor = true;
             this.new_client_bttn.Visible = false;
             // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 4;
-            this.logo.TabStop = false;
-            // 
             // cours_list
             // 
             this.cours_list.HideSelection = false;
@@ -158,6 +150,15 @@ namespace pesopolis
             this.create_cours.UseVisualStyleBackColor = true;
             this.create_cours.Click += new System.EventHandler(this.create_cours_Click);
             // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 4;
+            this.logo.TabStop = false;
+            // 
             // Show_mails
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -168,6 +169,7 @@ namespace pesopolis
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Show_mails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Показать рассылки";

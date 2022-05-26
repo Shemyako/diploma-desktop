@@ -51,6 +51,7 @@ namespace pesopolis.places
                 case "1":
                     MessageBox.Show("Готово");
                     Show_places form1 = new Show_places(form);
+                    form1.Location = this.Location;
                     form1.Show();
                     this.FormClosing -= Edit_place_FormClosing;
                     this.Close();
@@ -89,6 +90,18 @@ namespace pesopolis.places
         private void Edit_place_Load(object sender, EventArgs e)
         {
             form.Show_menu(panel1);
+        }
+
+        private void back_bttn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы уверены, что хотите выйти? Данные не сохранятся", "Выход", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+            Show_places form1 = new Show_places(form);
+            // this.FormClosing -= New_dog_FormClosing;
+            form1.Show();
+            form1.Location = this.Location;
+            this.FormClosing -= Edit_place_FormClosing;
+            this.Close();
         }
     }
 }

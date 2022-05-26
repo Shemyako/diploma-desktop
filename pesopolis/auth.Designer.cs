@@ -35,11 +35,11 @@ namespace pesopolis
             this.login_lbl = new System.Windows.Forms.Label();
             this.pswrd_lbl = new System.Windows.Forms.Label();
             this.login_box = new System.Windows.Forms.TextBox();
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.logo_pic = new System.Windows.Forms.PictureBox();
             this.password_box = new System.Windows.Forms.TextBox();
             this.auth_bttn = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.logo_pic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_pic)).BeginInit();
             this.SuspendLayout();
@@ -83,23 +83,6 @@ namespace pesopolis
             this.login_box.Size = new System.Drawing.Size(416, 62);
             this.login_box.TabIndex = 4;
             // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 0;
-            this.logo.TabStop = false;
-            // 
-            // logo_pic
-            // 
-            this.logo_pic.Location = new System.Drawing.Point(31, 29);
-            this.logo_pic.Name = "logo_pic";
-            this.logo_pic.Size = new System.Drawing.Size(149, 153);
-            this.logo_pic.TabIndex = 0;
-            this.logo_pic.TabStop = false;
-            // 
             // password_box
             // 
             this.password_box.Font = new System.Drawing.Font("Georgia", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -127,6 +110,23 @@ namespace pesopolis
             this.notifyIcon1.Text = "Отобразить меню";
             this.notifyIcon1.Visible = true;
             // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 0;
+            this.logo.TabStop = false;
+            // 
+            // logo_pic
+            // 
+            this.logo_pic.Location = new System.Drawing.Point(31, 29);
+            this.logo_pic.Name = "logo_pic";
+            this.logo_pic.Size = new System.Drawing.Size(149, 153);
+            this.logo_pic.TabIndex = 0;
+            this.logo_pic.TabStop = false;
+            // 
             // Auth_form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -140,6 +140,7 @@ namespace pesopolis
             this.Controls.Add(this.auth_lbl);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Auth_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";

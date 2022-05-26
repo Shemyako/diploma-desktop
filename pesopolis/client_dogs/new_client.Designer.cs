@@ -29,7 +29,7 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
-            this.logo = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(New_client));
             this.name_textbox = new System.Windows.Forms.TextBox();
             this.phone_textbox = new System.Windows.Forms.TextBox();
             this.tg_id_textbox = new System.Windows.Forms.TextBox();
@@ -40,17 +40,10 @@ namespace pesopolis
             this.panel1 = new System.Windows.Forms.Panel();
             this.is_admin = new System.Windows.Forms.CheckBox();
             this.password = new System.Windows.Forms.TextBox();
+            this.login_lbl = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 2;
-            this.logo.TabStop = false;
             // 
             // name_textbox
             // 
@@ -119,6 +112,7 @@ namespace pesopolis
             this.is_handler.TabIndex = 28;
             this.is_handler.Text = "Кинолог";
             this.is_handler.UseVisualStyleBackColor = true;
+            this.is_handler.CheckedChanged += new System.EventHandler(this.is_handler_CheckedChanged);
             // 
             // panel1
             // 
@@ -152,11 +146,32 @@ namespace pesopolis
             this.password.Text = "Пароль";
             this.password.Visible = false;
             // 
+            // login_lbl
+            // 
+            this.login_lbl.AutoSize = true;
+            this.login_lbl.Font = new System.Drawing.Font("Georgia", 9.75F);
+            this.login_lbl.Location = new System.Drawing.Point(485, 129);
+            this.login_lbl.Name = "login_lbl";
+            this.login_lbl.Size = new System.Drawing.Size(53, 16);
+            this.login_lbl.TabIndex = 36;
+            this.login_lbl.Text = "Логин:";
+            this.login_lbl.Visible = false;
+            // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 2;
+            this.logo.TabStop = false;
+            // 
             // New_client
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.login_lbl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_admin);
             this.Controls.Add(this.is_handler);
@@ -169,6 +184,7 @@ namespace pesopolis
             this.Controls.Add(this.name_textbox);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "New_client";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Создание клиента";
@@ -193,5 +209,6 @@ namespace pesopolis
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox is_admin;
         private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.Label login_lbl;
     }
 }

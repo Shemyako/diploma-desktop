@@ -29,22 +29,14 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
-            this.logo = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Find_client));
             this.phone_textBox = new System.Windows.Forms.TextBox();
             this.find_bttn = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.logo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 4;
-            this.logo.TabStop = false;
             // 
             // phone_textBox
             // 
@@ -84,6 +76,15 @@ namespace pesopolis
             this.panel1.Size = new System.Drawing.Size(149, 496);
             this.panel1.TabIndex = 35;
             // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 4;
+            this.logo.TabStop = false;
+            // 
             // Find_client
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -95,6 +96,7 @@ namespace pesopolis
             this.Controls.Add(this.phone_textBox);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Find_client";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Найти клиента";

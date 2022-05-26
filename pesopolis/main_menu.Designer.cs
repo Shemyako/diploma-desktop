@@ -29,7 +29,7 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
-            this.logo = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_form));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -39,18 +39,10 @@ namespace pesopolis
             this.find_client_bttn = new System.Windows.Forms.Button();
             this.new_client_bttn = new System.Windows.Forms.Button();
             this.Сегодня = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logo
-            // 
-            this.logo.Image = global::pesopolis.Properties.Resources.logo;
-            this.logo.Location = new System.Drawing.Point(13, 14);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(149, 153);
-            this.logo.TabIndex = 1;
-            this.logo.TabStop = false;
             // 
             // panel1
             // 
@@ -151,6 +143,15 @@ namespace pesopolis
             this.Сегодня.TabIndex = 3;
             this.Сегодня.Text = "label1";
             // 
+            // logo
+            // 
+            this.logo.Image = global::pesopolis.Properties.Resources.logo;
+            this.logo.Location = new System.Drawing.Point(13, 14);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(149, 153);
+            this.logo.TabIndex = 1;
+            this.logo.TabStop = false;
+            // 
             // Menu_form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -160,13 +161,14 @@ namespace pesopolis
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Меню";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_form_FormClosing);
             this.Load += new System.EventHandler(this.Menu_form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

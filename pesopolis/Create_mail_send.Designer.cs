@@ -29,6 +29,7 @@ namespace pesopolis
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Create_mail_send));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -41,8 +42,9 @@ namespace pesopolis
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.send_to_chckBx = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.back_bttn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -154,9 +156,10 @@ namespace pesopolis
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Georgia", 9.75F);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(420, 452);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(151, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(121, 22);
             this.dateTimePicker1.TabIndex = 7;
             // 
             // label1
@@ -169,18 +172,18 @@ namespace pesopolis
             this.label1.TabIndex = 8;
             this.label1.Text = "Дата поста";
             // 
-            // comboBox1
+            // send_to_chckBx
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Georgia", 9.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.send_to_chckBx.Font = new System.Drawing.Font("Georgia", 9.75F);
+            this.send_to_chckBx.FormattingEnabled = true;
+            this.send_to_chckBx.Items.AddRange(new object[] {
             "",
             "Телеграм",
             "Почта"});
-            this.comboBox1.Location = new System.Drawing.Point(420, 507);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 9;
+            this.send_to_chckBx.Location = new System.Drawing.Point(420, 507);
+            this.send_to_chckBx.Name = "send_to_chckBx";
+            this.send_to_chckBx.Size = new System.Drawing.Size(121, 24);
+            this.send_to_chckBx.TabIndex = 9;
             // 
             // label2
             // 
@@ -191,6 +194,17 @@ namespace pesopolis
             this.label2.Size = new System.Drawing.Size(150, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Платформа отправки";
+            // 
+            // back_bttn
+            // 
+            this.back_bttn.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.back_bttn.Location = new System.Drawing.Point(217, 618);
+            this.back_bttn.Name = "back_bttn";
+            this.back_bttn.Size = new System.Drawing.Size(159, 51);
+            this.back_bttn.TabIndex = 15;
+            this.back_bttn.Text = "Назад";
+            this.back_bttn.UseVisualStyleBackColor = true;
+            this.back_bttn.Click += new System.EventHandler(this.back_bttn_Click);
             // 
             // logo
             // 
@@ -206,7 +220,8 @@ namespace pesopolis
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.back_bttn);
+            this.Controls.Add(this.send_to_chckBx);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
@@ -215,6 +230,7 @@ namespace pesopolis
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Create_mail_send";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Создать рассылку";
@@ -242,7 +258,8 @@ namespace pesopolis
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox send_to_chckBx;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button back_bttn;
     }
 }

@@ -47,9 +47,9 @@ namespace pesopolis
                     dateTimePicker1.Text = words[2];
 
                     if (words[3] == "1")
-                        comboBox1.SelectedIndex = 1;
+                        send_to_chckBx.SelectedIndex = 1;
                     else if (words[3] == "2")
-                        comboBox1.SelectedIndex = 2;
+                        send_to_chckBx.SelectedIndex = 2;
 
                     textBox1.Text = words[4];
 
@@ -87,17 +87,78 @@ namespace pesopolis
 
         private void create_bttn_Click(object sender, EventArgs e)
         {
-            string address = form.route + "/new/place?" + form.after_route;
+            if (send_to_chckBx.SelectedIndex == -1)
+            {
+                MessageBox.Show("Выберите корректный способ отправки");
+                return;
+            }
+            string address = form.route + "/new/ad?" + form.after_route;
 
-            //address += "&address=" + address_textbox.Text + "&name=" + name_textbox.Text + "&actual=" + is_actual.Checked.ToString();
+            string send_to = send_to_chckBx.SelectedIndex.ToString();
 
-            //if (edit_id != null)
-            //    address += "&id=" + edit_id;
+
+            address += "&text=" + textBox1.Text + "&date=" + dateTimePicker1.Text + "&send_to=" + send_to + 
+                    "&created_by=" + form.login;
+            if (id != null)
+                address += "&id=" + id;
+
+            // Отправка запроса
+            string line = form.send_request(address);
+            string[] words = line.Split(new char[] { '~' });
+            // Проверка на статус
+            switch (words[0])
+            {
+                // Всё норм
+                case "1":
+                    MessageBox.Show("Успешно");
+                    //MessageBox.Show(words[1]);
+                    Show_mails form1 = new Show_mails(form);
+                    // this.FormClosing -= New_dog_FormClosing;
+                    form1.Show();
+                    form1.Location = this.Location;
+                    this.FormClosing -= Create_mail_send_FormClosing;
+                    this.Close();
+                    break;
+
+                // Была ошибка
+                case "0":
+                    MessageBox.Show(words[1]);
+                    break;
+
+                // Реавторизация
+                case "3":
+                    // Обновление токена
+                    form.Change_token(words[1]);
+                    // Повторная отправка сообщения
+                    create_bttn_Click(sender, e);
+                    break;
+
+                case "-1":
+                    MessageBox.Show("Вам нужно пройти заново авторизацию");
+                    form.Show();
+                    this.FormClosing -= Create_mail_send_FormClosing;
+                    this.Close();
+                    break;
+
+
+            }
         }
 
         private void Create_mail_send_FormClosing(object sender, FormClosingEventArgs e)
         {
             form.active_forms = 0;
+        }
+
+        private void back_bttn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Вы уверены, что хотите выйти? Данные не сохранятся", "Выход", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+            Show_mails form1 = new Show_mails(form);
+            // this.FormClosing -= New_dog_FormClosing;
+            form1.Show();
+            form1.Location = this.Location;
+            this.FormClosing -= Create_mail_send_FormClosing;
+            this.Close();
         }
     }
 }
