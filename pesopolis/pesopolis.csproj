@@ -157,6 +157,18 @@
     <Compile Include="Show_mails.Designer.cs">
       <DependentUpon>Show_mails.cs</DependentUpon>
     </Compile>
+    <Compile Include="types\Edit_type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="types\Edit_type.Designer.cs">
+      <DependentUpon>Edit_type.cs</DependentUpon>
+    </Compile>
+    <Compile Include="types\Show_types.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="types\Show_types.Designer.cs">
+      <DependentUpon>Show_types.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="courses\Create_new_cours.resx">
       <DependentUpon>Create_new_cours.cs</DependentUpon>
     </EmbeddedResource>
@@ -211,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Show_mails.resx">
       <DependentUpon>Show_mails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="types\Edit_type.resx">
+      <DependentUpon>Edit_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="types\Show_types.resx">
+      <DependentUpon>Show_types.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
