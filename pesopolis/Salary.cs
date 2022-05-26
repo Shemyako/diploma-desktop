@@ -14,7 +14,7 @@ namespace pesopolis
     public partial class Salary : Form
     {
         private Auth_form form;
-        private ArrayList lessons = new ArrayList();
+        private string lessons;
         private string[] handlers;
         public Salary(Auth_form form1)
         {
@@ -72,7 +72,7 @@ namespace pesopolis
             for (int i = 0; i < (handlers.Length - 1); i += 2)
                 staff_comboBox.Items.Add(handlers[i] + " " + handlers[i + 1]);
 
-            MessageBox.Show(this.Size.ToString());
+            //MessageBox.Show(this.Size.ToString());
         }
 
         private void Salary_FormClosing(object sender, FormClosingEventArgs e)
@@ -112,6 +112,7 @@ namespace pesopolis
                     if (words[2].ToString() != "0")
                     {
                         //lessons.RemoveAt(1);
+                        lessons = words[1];
                         show_lessons(words[1]);
                     }
                     break;
@@ -150,22 +151,20 @@ namespace pesopolis
             //            orderby stri.Split(new char[] { '|' })[1]
             //            select stri;
 
-            string[] sub_words = to_show.Split(new char[] { '|' });
-            for (int i = 0; i < sub_words.Length - 1; i+=4)
+            string[] sub_words = to_show.Split(new char[] { '@' });
+            foreach (var item in sub_words)
             {
+                if (item == "")
+                    continue;
                 //MessageBox.Show(item);
+                string[] less = item.Split(new char[] { '|' });
 
-
-                ListViewItem item1 = new ListViewItem(sub_words[i]);
-                item1.SubItems.Add(sub_words[i + 1]);
-                item1.SubItems.Add(sub_words[i + 2]);
-                item1.SubItems.Add(sub_words[i + 3]);
+                ListViewItem item1 = new ListViewItem(less[0]);
+                item1.SubItems.Add(less[1]);
+                item1.SubItems.Add(less[2]);
+                item1.SubItems.Add(less[3]);
                 
                 lessons_list.Items.Add(item1);
-
-
-
-
             }
 
         }
@@ -191,6 +190,31 @@ namespace pesopolis
         {
             if (e.KeyCode == Keys.Enter)
                 staff_comboBox_SelectedIndexChanged(sender, e);
+        }
+
+        private void lessons_list_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            lessons_list.Items.Clear();
+            // Сортировка и отображение занятий
+            string[] sub_words = lessons.Split(new char[] { '@' });
+            var query = from String stri in sub_words
+                        where stri != ""
+                        orderby stri.Split(new char[] { '|' })[e.Column]
+                        select stri;
+            foreach (var item in query)
+            {
+                if (item == "")
+                    continue;
+                //MessageBox.Show(item);
+                string[] less = item.Split(new char[] { '|' });
+
+                ListViewItem item1 = new ListViewItem(less[0]);
+                item1.SubItems.Add(less[1]);
+                item1.SubItems.Add(less[2]);
+                item1.SubItems.Add(less[3]);
+
+                lessons_list.Items.Add(item1);
+            }
         }
     }
 }

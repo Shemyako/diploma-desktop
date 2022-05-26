@@ -45,6 +45,8 @@ namespace pesopolis
             this.password = new System.Windows.Forms.TextBox();
             this.login_lbl = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.tg_id_lbl = new System.Windows.Forms.Label();
+            this.mail_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,11 +201,33 @@ namespace pesopolis
             this.logo.TabIndex = 2;
             this.logo.TabStop = false;
             // 
+            // tg_id_lbl
+            // 
+            this.tg_id_lbl.AutoSize = true;
+            this.tg_id_lbl.Font = new System.Drawing.Font("Georgia", 8F);
+            this.tg_id_lbl.Location = new System.Drawing.Point(202, 241);
+            this.tg_id_lbl.Name = "tg_id_lbl";
+            this.tg_id_lbl.Size = new System.Drawing.Size(37, 14);
+            this.tg_id_lbl.TabIndex = 38;
+            this.tg_id_lbl.Text = "tg_id";
+            // 
+            // mail_lbl
+            // 
+            this.mail_lbl.AutoSize = true;
+            this.mail_lbl.Font = new System.Drawing.Font("Georgia", 8F);
+            this.mail_lbl.Location = new System.Drawing.Point(202, 298);
+            this.mail_lbl.Name = "mail_lbl";
+            this.mail_lbl.Size = new System.Drawing.Size(44, 14);
+            this.mail_lbl.TabIndex = 38;
+            this.mail_lbl.Text = "e-mail";
+            // 
             // Edit_client
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.mail_lbl);
+            this.Controls.Add(this.tg_id_lbl);
             this.Controls.Add(this.password);
             this.Controls.Add(this.is_admin);
             this.Controls.Add(this.panel1);
@@ -249,5 +273,7 @@ namespace pesopolis
         private System.Windows.Forms.CheckBox is_admin;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label login_lbl;
+        private System.Windows.Forms.Label tg_id_lbl;
+        private System.Windows.Forms.Label mail_lbl;
     }
 }

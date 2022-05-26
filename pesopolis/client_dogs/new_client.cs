@@ -54,7 +54,7 @@ namespace pesopolis
 
             string tg_id;
             // Заполнение None пустые поля
-            if (tg_id_textbox.Text == "" || tg_id_textbox.Text == "tg_id")
+            if (tg_id_textbox.Text == "" || tg_id_textbox.Text == "tg_id" || email_textbox.Text == "None")
                 tg_id = "Null";
             else
             {
@@ -81,7 +81,7 @@ namespace pesopolis
                 role = "2";
             // Null ли в почте
             string mail;
-            if (email_textbox.Text == "" || email_textbox.Text == "e-mail")
+            if (email_textbox.Text == "" || email_textbox.Text == "e-mail" || email_textbox.Text == "None")
                 mail = "Null";
             else
                 mail = email_textbox.Text;

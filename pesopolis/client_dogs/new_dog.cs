@@ -104,6 +104,7 @@ namespace pesopolis
                                     break;
                                 case 3:
                                     staff_comboBox.Items.AddRange(sub_words);
+                                    cours_comboBox.SelectedIndex = 0;
                                     break;
                             }
                             

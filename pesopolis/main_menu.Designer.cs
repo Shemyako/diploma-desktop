@@ -38,7 +38,7 @@ namespace pesopolis
             this.cours_bttn = new System.Windows.Forms.Button();
             this.find_client_bttn = new System.Windows.Forms.Button();
             this.new_client_bttn = new System.Windows.Forms.Button();
-            this.Сегодня = new System.Windows.Forms.Label();
+            this.main_lbl = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
@@ -133,15 +133,15 @@ namespace pesopolis
             this.new_client_bttn.Visible = false;
             this.new_client_bttn.Click += new System.EventHandler(this.New_client_bttn_Click);
             // 
-            // Сегодня
+            // main_lbl
             // 
-            this.Сегодня.AutoSize = true;
-            this.Сегодня.Font = new System.Drawing.Font("Georgia", 9.75F);
-            this.Сегодня.Location = new System.Drawing.Point(379, 185);
-            this.Сегодня.Name = "Сегодня";
-            this.Сегодня.Size = new System.Drawing.Size(45, 16);
-            this.Сегодня.TabIndex = 3;
-            this.Сегодня.Text = "label1";
+            this.main_lbl.AutoSize = true;
+            this.main_lbl.Font = new System.Drawing.Font("Georgia", 48F);
+            this.main_lbl.Location = new System.Drawing.Point(262, 127);
+            this.main_lbl.Name = "main_lbl";
+            this.main_lbl.Size = new System.Drawing.Size(193, 72);
+            this.main_lbl.TabIndex = 3;
+            this.main_lbl.Text = "label1";
             // 
             // logo
             // 
@@ -157,7 +157,7 @@ namespace pesopolis
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.Сегодня);
+            this.Controls.Add(this.main_lbl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -185,6 +185,6 @@ namespace pesopolis
         private System.Windows.Forms.Button lesson_bttn;
         private System.Windows.Forms.Button cours_bttn;
         private System.Windows.Forms.Button find_client_bttn;
-        private System.Windows.Forms.Label Сегодня;
+        private System.Windows.Forms.Label main_lbl;
     }
 }

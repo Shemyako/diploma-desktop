@@ -75,6 +75,7 @@ namespace pesopolis
             this.lessons_list.Size = new System.Drawing.Size(587, 372);
             this.lessons_list.TabIndex = 41;
             this.lessons_list.UseCompatibleStateImageBehavior = false;
+            this.lessons_list.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.lessons_list_ColumnClick);
             // 
             // total_salary_lbl
             // 

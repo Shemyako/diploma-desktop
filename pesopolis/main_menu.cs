@@ -19,6 +19,7 @@ namespace pesopolis
         {
             form = form1;
             form.active_forms = 1;
+
             InitializeComponent();
         }
 
@@ -85,8 +86,9 @@ namespace pesopolis
 
         private void Menu_form_Load(object sender, EventArgs e)
         {
-
+            main_lbl.Text = $"Приветствую.\nСегодня {DateTime.Now.ToString("dd MMMM yy")}\nВремя: {DateTime.Now.ToString("HH:mm")}";
             form.Show_menu(panel1);
+
         }
     }
 }
