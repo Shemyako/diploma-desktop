@@ -37,6 +37,8 @@ namespace pesopolis.places
             this.panel1 = new System.Windows.Forms.Panel();
             this.back_bttn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.tg_id_lbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,11 +111,33 @@ namespace pesopolis.places
             this.logo.TabIndex = 2;
             this.logo.TabStop = false;
             // 
+            // tg_id_lbl
+            // 
+            this.tg_id_lbl.AutoSize = true;
+            this.tg_id_lbl.Font = new System.Drawing.Font("Georgia", 8F);
+            this.tg_id_lbl.Location = new System.Drawing.Point(328, 185);
+            this.tg_id_lbl.Name = "tg_id_lbl";
+            this.tg_id_lbl.Size = new System.Drawing.Size(42, 14);
+            this.tg_id_lbl.TabIndex = 43;
+            this.tg_id_lbl.Text = "Адрес";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 8F);
+            this.label1.Location = new System.Drawing.Point(328, 230);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 14);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Название";
+            // 
             // Edit_place
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tg_id_lbl);
             this.Controls.Add(this.back_bttn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_actual);
@@ -143,5 +167,7 @@ namespace pesopolis.places
         private System.Windows.Forms.TextBox address_textbox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button back_bttn;
+        private System.Windows.Forms.Label tg_id_lbl;
+        private System.Windows.Forms.Label label1;
     }
 }

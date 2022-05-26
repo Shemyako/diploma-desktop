@@ -38,6 +38,9 @@ namespace pesopolis
             this.panel1 = new System.Windows.Forms.Panel();
             this.back_bttn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.name_lbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +122,44 @@ namespace pesopolis
             this.logo.TabIndex = 5;
             this.logo.TabStop = false;
             // 
+            // name_lbl
+            // 
+            this.name_lbl.AutoSize = true;
+            this.name_lbl.Font = new System.Drawing.Font("Georgia", 8F);
+            this.name_lbl.Location = new System.Drawing.Point(252, 157);
+            this.name_lbl.Name = "name_lbl";
+            this.name_lbl.Size = new System.Drawing.Size(66, 14);
+            this.name_lbl.TabIndex = 39;
+            this.name_lbl.Text = "Название";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 8F);
+            this.label1.Location = new System.Drawing.Point(252, 202);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 14);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Занятий";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Georgia", 8F);
+            this.label2.Location = new System.Drawing.Point(252, 249);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 14);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "Цена";
+            // 
             // Create_new_cours
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.back_bttn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.is_actual);
@@ -155,5 +191,8 @@ namespace pesopolis
         private System.Windows.Forms.TextBox name_textbox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button back_bttn;
+        private System.Windows.Forms.Label name_lbl;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
