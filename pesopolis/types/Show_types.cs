@@ -146,5 +146,33 @@ namespace pesopolis.types
         {
             form.Show_menu(panel1);
         }
+
+        private void types_list_DoubleClick(object sender, EventArgs e)
+        {
+            string[] to_send = new string[5];
+            for (int i = 0; i < 5; i++)
+            {
+                to_send[i] = types_list.SelectedItems[0].SubItems[i].Text;
+            }
+            this.FormClosing -= Show_types_FormClosing;
+            Edit_type form1 = new Edit_type(form, to_send);
+            form1.Location = this.Location;
+            form1.Show();
+            this.Close();
+        }
+
+        private void create_cours_Click(object sender, EventArgs e)
+        {
+            Edit_type new_form = new Edit_type(form);
+            new_form.Show();
+            new_form.Location = this.Location;
+            this.FormClosing -= Show_types_FormClosing;
+            this.Close();
+        }
+
+        private void is_actual_box_Click(object sender, EventArgs e)
+        {
+            show_types();
+        }
     }
 }

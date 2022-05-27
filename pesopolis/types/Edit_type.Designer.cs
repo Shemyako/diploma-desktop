@@ -29,6 +29,7 @@ namespace pesopolis.types
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Edit_type));
             this.logo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace pesopolis.types
             this.price_textbox = new System.Windows.Forms.TextBox();
             this.amount_textbox = new System.Windows.Forms.TextBox();
             this.name_textbox = new System.Windows.Forms.TextBox();
+            this.back_bttn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,6 +112,7 @@ namespace pesopolis.types
             this.save_bttn.TabIndex = 43;
             this.save_bttn.Text = "Сохранить";
             this.save_bttn.UseVisualStyleBackColor = true;
+            this.save_bttn.Click += new System.EventHandler(this.save_bttn_Click);
             // 
             // price_textbox
             // 
@@ -138,11 +141,23 @@ namespace pesopolis.types
             this.name_textbox.TabIndex = 40;
             this.name_textbox.Text = "Имя";
             // 
+            // back_bttn
+            // 
+            this.back_bttn.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.back_bttn.Location = new System.Drawing.Point(217, 618);
+            this.back_bttn.Name = "back_bttn";
+            this.back_bttn.Size = new System.Drawing.Size(159, 51);
+            this.back_bttn.TabIndex = 48;
+            this.back_bttn.Text = "Назад";
+            this.back_bttn.UseVisualStyleBackColor = true;
+            this.back_bttn.Click += new System.EventHandler(this.back_bttn_Click);
+            // 
             // Edit_type
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.back_bttn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -154,9 +169,12 @@ namespace pesopolis.types
             this.Controls.Add(this.amount_textbox);
             this.Controls.Add(this.price_textbox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Edit_type";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Изменить тип";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Edit_type_FormClosing);
+            this.Load += new System.EventHandler(this.Edit_type_Load);
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,5 +193,6 @@ namespace pesopolis.types
         private System.Windows.Forms.TextBox price_textbox;
         private System.Windows.Forms.TextBox amount_textbox;
         private System.Windows.Forms.TextBox name_textbox;
+        private System.Windows.Forms.Button back_bttn;
     }
 }

@@ -29,6 +29,7 @@ namespace pesopolis.types
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Show_types));
             this.logo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.types_list = new System.Windows.Forms.ListView();
@@ -61,6 +62,7 @@ namespace pesopolis.types
             this.types_list.Size = new System.Drawing.Size(710, 372);
             this.types_list.TabIndex = 39;
             this.types_list.UseCompatibleStateImageBehavior = false;
+            this.types_list.DoubleClick += new System.EventHandler(this.types_list_DoubleClick);
             // 
             // create_cours
             // 
@@ -71,6 +73,7 @@ namespace pesopolis.types
             this.create_cours.TabIndex = 40;
             this.create_cours.Text = "Создать новый тип занятия";
             this.create_cours.UseVisualStyleBackColor = true;
+            this.create_cours.Click += new System.EventHandler(this.create_cours_Click);
             // 
             // is_actual_box
             // 
@@ -84,6 +87,7 @@ namespace pesopolis.types
             this.is_actual_box.TabIndex = 41;
             this.is_actual_box.Text = "Скрыть старые типы занятий";
             this.is_actual_box.UseVisualStyleBackColor = true;
+            this.is_actual_box.Click += new System.EventHandler(this.is_actual_box_Click);
             // 
             // Show_types
             // 
@@ -96,6 +100,7 @@ namespace pesopolis.types
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Show_types";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Показать типы занятий";
