@@ -287,12 +287,12 @@ namespace pesopolis
 
         private void dogs_list_DoubleClick(object sender, EventArgs e)
         {
-            for (int i = 0; i<dogs.Length-1; i += 6) 
-                if (dogs_list.SelectedItems[0].SubItems[0].Text == dogs[i])
-                {
-                    place_combobox.Text = dogs[i + 4];
-                    break;
-                }
+            //for (int i = 0; i<dogs.Length-1; i += 6) 
+            //    if (dogs_list.SelectedItems[0].SubItems[0].Text == dogs[i])
+            //    {
+            //        place_combobox.Text = dogs[i + 4];
+            //        break;
+            //    }
                     
 
         }
@@ -395,6 +395,21 @@ namespace pesopolis
         private void Lessons_Load(object sender, EventArgs e)
         {
             form.Show_menu(panel1);
+        }
+
+        private void dogs_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dogs_list.SelectedItems.Count == 0)
+                return;
+            for (int i = 0; i < dogs.Length - 1; i += 8)
+            {
+                if (dogs_list.SelectedItems[0].SubItems[0].Text == dogs[i])
+                {
+                    place_combobox.Text = dogs[i + 4];
+                    break;
+                }
+            }
+                
         }
     }
 }

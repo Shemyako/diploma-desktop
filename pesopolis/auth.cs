@@ -175,10 +175,18 @@ namespace pesopolis
                 response.Close();
             }
             catch (WebException ex)
-            {
-                HttpWebResponse httpResponse = (HttpWebResponse)ex.Response;
-                line = "0~" + string.Format("Статусный код ошибки: {0} - {1}",
-                        (int)httpResponse.StatusCode, httpResponse.StatusCode);
+            { // Обработка ошибок соединения
+                // получаем статус исключения
+                WebExceptionStatus status = ex.Status;
+
+                if (status == WebExceptionStatus.ProtocolError)
+                {
+                    HttpWebResponse httpResponse = (HttpWebResponse)ex.Response;
+                    MessageBox.Show(string.Format("Статусный код ошибки: {0} - {1}",
+                            (int)httpResponse.StatusCode, httpResponse.StatusCode));
+                }
+                else
+                    MessageBox.Show("Произошла ошибка попробуйте позднее");
             }
             return line;
         }

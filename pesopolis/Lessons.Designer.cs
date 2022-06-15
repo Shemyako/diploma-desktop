@@ -84,6 +84,7 @@ namespace pesopolis
             this.dogs_list.Size = new System.Drawing.Size(394, 372);
             this.dogs_list.TabIndex = 32;
             this.dogs_list.UseCompatibleStateImageBehavior = false;
+            this.dogs_list.SelectedIndexChanged += new System.EventHandler(this.dogs_list_SelectedIndexChanged);
             this.dogs_list.Click += new System.EventHandler(this.dogs_list_DoubleClick);
             // 
             // is_actual_box

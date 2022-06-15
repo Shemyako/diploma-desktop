@@ -68,6 +68,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -92,6 +100,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -239,9 +255,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Setup"
+        "ProductName" = "8:Pesopolis Setup"
         "ProductCode" = "8:{EC58D2DC-99B4-4A63-A3D3-6FE3DFC02BF6}"
-        "PackageCode" = "8:{2E1D2C91-91D5-44DF-8195-1023A56D8F52}"
+        "PackageCode" = "8:{5E2B61D4-63E9-4043-A58A-19EDFEED9027}"
         "UpgradeCode" = "8:{5533CD24-01CD-407D-8725-6046400FAC6E}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -249,12 +265,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Pesopolis"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Setup"
+        "Title" = "8:Pesopolis Setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Лев"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -363,7 +379,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_83D26E30F2694F77A2370FEE669DE8AA"
             {
-            "Name" = "8:pesopolis installer"
+            "Name" = "8:Пёсополис"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -372,12 +388,12 @@
             "Target" = "8:_C55844B5F9D5438BBBF175F8AF280E41"
             "Folder" = "8:_3651CBD1EBAA4C9690D431C3FB24B3D5"
             "WorkingFolder" = "8:_9E0EE9E976A44E5194687F9A6C166BEF"
-            "Icon" = "8:"
+            "Icon" = "8:_78A8BADF5084459E90B44FA72E83C69C"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DF407502CD2A4831BBF9089B72F0BDF3"
             {
-            "Name" = "8:pesopolis Installer"
+            "Name" = "8:Пёсополис"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -386,7 +402,7 @@
             "Target" = "8:_C55844B5F9D5438BBBF175F8AF280E41"
             "Folder" = "8:_1CD14E10F3EB411491EF1720F5E982B3"
             "WorkingFolder" = "8:_9E0EE9E976A44E5194687F9A6C166BEF"
-            "Icon" = "8:"
+            "Icon" = "8:_78A8BADF5084459E90B44FA72E83C69C"
             "Feature" = "8:"
             }
         }
