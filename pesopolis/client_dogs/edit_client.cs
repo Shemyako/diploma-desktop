@@ -81,7 +81,7 @@ namespace pesopolis
             // this.FormClosing += edit_client_FormClosing;
             string address = form.route + "/get/client/dog?" + form.after_route;
             address += "&id=" + id;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             // Отправка запроса
             string line = form.send_request(address);
@@ -191,9 +191,10 @@ namespace pesopolis
                 }
             }
 
+            string tg_id = tg_id_textbox.Text;
             // Заполнение None пустые поля
             if (tg_id_textbox.Text == "" || tg_id_textbox.Text == "tg_id" || tg_id_textbox.Text == "None")
-                tg_id_textbox.Text = "Null";
+                tg_id = "Null";
             // Null в д.р.
             if (!birth_picker.Checked)
                 birth = "Null";
@@ -210,7 +211,7 @@ namespace pesopolis
             string address = form.route + "/edit/client?" + form.after_route;
 
             address += "&id=" + id + "&name=" + name_textbox.Text + "&phone=" + phone_textbox.Text + "&birth=" + birth +
-                "&tg_id=" + tg_id_textbox.Text + "&email=" + email_textbox.Text + "&role=" + role;
+                "&tg_id=" + tg_id + "&email=" + email_textbox.Text + "&role=" + role;
             // MessageBox.Show(address);
             if (role == "2")
                 address += "&password=" + password.Text;
@@ -257,7 +258,7 @@ namespace pesopolis
         // Редактирование собаки
         private void dogs_list_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(dogs_list.SelectedItems[0].SubItems[0].Text);
+            //MessageBox.Show(dogs_list.SelectedItems[0].SubItems[0].Text);
             this.FormClosing -= edit_client_FormClosing;
             New_dog form1 = new New_dog(form, id, dogs_list.SelectedItems[0].SubItems[0].Text, to_be_back);
             form1.Show();

@@ -95,7 +95,7 @@ namespace pesopolis
         private void get_courses()
         {
             string address = form.route + "/get/courses?" + form.after_route;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             // Отправка запроса
             string line = form.send_request(address);
@@ -158,7 +158,7 @@ namespace pesopolis
 
         private void cours_list_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
+            //MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
             string[] to_send = new string[5];
             for (int i = 0; i < 5; i++)
             {

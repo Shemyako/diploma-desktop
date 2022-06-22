@@ -30,18 +30,18 @@ namespace pesopolis.types
             types_list.GridLines = true;
             // Sort the items in the list in ascending order.
             types_list.Sorting = SortOrder.Ascending;
-            types_list.Columns.Add("№", types_list.Width / 6, HorizontalAlignment.Left);
-            types_list.Columns.Add("Название", types_list.Width * 2 / 6, HorizontalAlignment.Left);
-            types_list.Columns.Add("С клиента", types_list.Width / 6, HorizontalAlignment.Left);
-            types_list.Columns.Add("Инструктору", types_list.Width / 6, HorizontalAlignment.Left);
-            types_list.Columns.Add("Актуально", types_list.Width / 6, HorizontalAlignment.Left);
+            types_list.Columns.Add("№", types_list.Width / 5, HorizontalAlignment.Left);
+            types_list.Columns.Add("Название", types_list.Width * 2 / 5, HorizontalAlignment.Left);
+            types_list.Columns.Add("С клиента", types_list.Width / 5, HorizontalAlignment.Left);
+            types_list.Columns.Add("Инструктору", types_list.Width / 5, HorizontalAlignment.Left);
+            types_list.Columns.Add("Актуально", types_list.Width / 5, HorizontalAlignment.Left);
             get_types();
         }
 
         private void get_types()
         {
             string address = form.route + "/get/types?" + form.after_route;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             // Отправка запроса
             string line = form.send_request(address);

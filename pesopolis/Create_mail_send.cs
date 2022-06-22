@@ -29,7 +29,7 @@ namespace pesopolis
         private void get_advertisement()
         {
             string address = form.route + "/get/advertisement?id=" + id + "&" + form.after_route;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             // Отправка запроса
             string line = form.send_request(address);

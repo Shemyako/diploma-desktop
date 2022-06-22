@@ -25,7 +25,7 @@ namespace pesopolis
         private void get_handlers()
         {
             string address = form.route + "/get/handlers?" + form.after_route;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             string line = form.send_request(address);
             string[] words = line.Split(new char[] { '~' });

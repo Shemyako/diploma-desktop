@@ -53,7 +53,7 @@ namespace pesopolis
             string address = form.route + "/get/client?" + form.after_route;
 
             address += "&phone=" + phone_textBox.Text;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             string line = form.send_request(address);
 
@@ -132,7 +132,7 @@ namespace pesopolis
 
         private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show(listView1.SelectedItems[0].SubItems[0].Text);
+            //MessageBox.Show(listView1.SelectedItems[0].SubItems[0].Text);
             string[] to_send = new string[8];
             for (int i = 0; i<8; i++)
             {

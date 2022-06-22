@@ -321,7 +321,7 @@ namespace pesopolis
             string address = form.route + "/get/client?" + form.after_route;
 
             address += "&phone=" + phone_textBox.Text;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             string line = form.send_request(address);
 
@@ -457,7 +457,7 @@ namespace pesopolis
             string address = form.route + "/get/dog/client?" + form.after_route;
 
             address += "&dog_id=" + dog_id;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             string line = form.send_request(address);
 
@@ -593,7 +593,7 @@ namespace pesopolis
                 string address = form.route + "/delete/dog/client?" + form.after_route;
 
                 address += "&dog_id=" + dog_id + "&id=" + dogs_list.SelectedItems[0].SubItems[0].Text;
-                MessageBox.Show(address);
+                //MessageBox.Show(address);
                 // Поулчаем ответ
                 string line = form.send_request(address);
                 // split ответа
@@ -651,7 +651,7 @@ namespace pesopolis
                 string address = form.route + "/add/dog/client?" + form.after_route;
 
                 address += "&dog_id=" + dog_id + "&id=" + dogs_list.SelectedItems[0].SubItems[0].Text;
-                MessageBox.Show(address);
+                //MessageBox.Show(address);
 
                 string line = form.send_request(address);
 
@@ -702,7 +702,7 @@ namespace pesopolis
                 string address = form.route + "/add/dog/cours?" + form.after_route;
 
                 address += "&dog_id=" + dog_id + "&cours_id=" + dogs_list.SelectedItems[0].SubItems[0].Text;
-                MessageBox.Show(address);
+                //MessageBox.Show(address);
 
                 string line = form.send_request(address);
 

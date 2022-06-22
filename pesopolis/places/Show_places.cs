@@ -40,7 +40,7 @@ namespace pesopolis.places
         private void get_places()
         {
             string address = form.route + "/get/places?" + form.after_route;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             // Отправка запроса
             string line = form.send_request(address);
@@ -149,7 +149,7 @@ namespace pesopolis.places
         }
         private void cours_list_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
+            //MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
             string[] to_send = new string[4];
             for (int i = 0; i < 4; i++)
             {

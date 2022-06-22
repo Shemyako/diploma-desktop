@@ -61,7 +61,7 @@ namespace pesopolis
             if (edit_id != null)
                 address += "&id=" + edit_id;
             
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             string line = form.send_request(address);
 

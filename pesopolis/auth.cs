@@ -111,7 +111,7 @@ namespace pesopolis
                         //    MessageBox.Show(line);
                         //}
                         line = reader.ReadToEnd();
-                        MessageBox.Show(line);
+                        //MessageBox.Show(line);
                     }
                 }
                 response.Close();
@@ -169,7 +169,7 @@ namespace pesopolis
                     using (StreamReader reader = new StreamReader(stream))
                     {
                         line = reader.ReadToEnd();
-                        MessageBox.Show(line);
+                        //MessageBox.Show(line);
                     }
                 }
                 response.Close();

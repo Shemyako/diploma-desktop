@@ -39,7 +39,7 @@ namespace pesopolis
         private void get_ad()
         {
             string address = form.route + "/get/ad?" + form.after_route;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             // Отправка запроса
             string line = form.send_request(address);
@@ -154,7 +154,7 @@ namespace pesopolis
 
         private void cours_list_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
+            //MessageBox.Show(cours_list.SelectedItems[0].SubItems[0].Text);
             string to_send = cours_list.SelectedItems[0].SubItems[0].Text;
             this.FormClosing -= Show_mails_FormClosing;
             Create_mail_send form1 = new Create_mail_send(form, to_send);

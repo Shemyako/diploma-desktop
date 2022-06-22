@@ -39,7 +39,7 @@ namespace pesopolis
             // Площадки
             string address = form.route + "/get/pre_lesson?" + form.after_route;
             //address += "&id=" + id;
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             // Отправка запроса
             string line = form.send_request(address);
@@ -218,6 +218,9 @@ namespace pesopolis
 
 
             }
+
+            // Отображение собак кинолога
+            is_actual_box_CheckedChanged(sender, e);
         }
 
         private void lessons_list_DoubleClick(object sender, EventArgs e)
@@ -226,7 +229,7 @@ namespace pesopolis
                         where stri.Split(new char[] { '|' })[1] == lessons_list.SelectedItems[0].SubItems[1].Text 
                             && stri.Split(new char[] { '|' })[2] == lessons_list.SelectedItems[0].SubItems[2].Text
                         select stri).ToList()[0];
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
 
             lessons_te_edit.Remove(query);
             // Удалим запись после двойного нажатия. Нужно переспросить перед удалением
@@ -347,7 +350,7 @@ namespace pesopolis
                 address += ". " + date_picker.Text + "||||" +
                     staff_comboBox.Text.Split(new char[] { ' ' })[0] + "|";
             }
-            MessageBox.Show(address);
+            //MessageBox.Show(address);
 
             // Отправка запроса
             string line = form.send_request(address);
